@@ -10,7 +10,7 @@
       --bg-dark: #0d0d12;
       --text-light: #fdfdfd;
       --text-muted: #b5b5b5;
-      --card-bg: rgba(255,255,255,0.05);
+      --card-bg: rgba(255,255,255,0.08);
     }
 
     body {
@@ -21,7 +21,6 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: var(--bg-dark);
       background: var(--grad-colors);
       background-size: 800% 800%;
       animation: gradientBG 20s ease infinite;
@@ -46,19 +45,23 @@
 
     .profile-card {
       background: var(--card-bg);
-      border-radius: 20px;
-      padding: 30px 25px;
+      border-radius: 25px;
+      padding: 35px 30px;
       max-width: 480px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 0 25px rgba(221,42,123,0.4);
-      backdrop-filter: blur(15px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(221,42,123,0.4) inset;
+      backdrop-filter: blur(20px);
       position: relative;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .profile-card:hover {transform: scale(1.02);}
+    .profile-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 35px rgba(221,42,123,0.5) inset;
+    }
+
     .profile-card::before {
       content: "";
       position: absolute;
@@ -67,25 +70,25 @@
       width: 180%;
       height: 180%;
       background: var(--grad-colors);
-      opacity: 0.1;
-      filter: blur(100px);
+      opacity: 0.12;
+      filter: blur(120px);
       z-index: 0;
       background-size: 400% 400%;
       animation: gradientBG 20s ease infinite;
     }
 
     .avatar {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       overflow: hidden;
       margin: 0 auto 20px;
-      border: 4px solid transparent;
+      border: 5px solid rgba(255,255,255,0.2);
       background: var(--grad-colors);
       background-clip: padding-box;
       position: relative;
-      box-shadow: 0 0 25px rgba(221,42,123,0.5);
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 25px rgba(221,42,123,0.5), 0 0 15px rgba(255,255,255,0.2) inset;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .avatar img {
@@ -93,42 +96,27 @@
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .avatar:hover {
+      box-shadow: 0 15px 35px rgba(221,42,123,0.7), 0 0 20px rgba(255,255,255,0.3) inset;
     }
 
     .avatar:hover img {
-      transform: scale(1.1);
+      transform: scale(1.12);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
     }
 
-    h1 {
-      font-size: 1.8rem;
-      margin: 5px 0 5px;
-    }
-
-    .username {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-    }
-
-    .bio {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #e0e0e0;
-      margin-bottom: 15px;
-    }
-
-    .bio-extra {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      color: #cfcfcf;
-      margin-bottom: 20px;
-    }
+    h1 {font-size: 1.85rem; margin: 5px 0 5px;}
+    .username {color: var(--text-muted); font-size: 1rem; margin-bottom: 15px;}
+    .bio {font-size: 1rem; line-height: 1.6; color: #e0e0e0; margin-bottom: 15px;}
+    .bio-extra {font-size: 0.9rem; line-height: 1.4; color: #cfcfcf; margin-bottom: 20px;}
 
     .links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       z-index: 2;
       position: relative;
       margin-bottom: 20px;
@@ -138,50 +126,64 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       background: var(--grad-colors);
       border: none;
       color: #fff;
-      padding: 12px;
-      border-radius: 12px;
+      padding: 14px;
+      border-radius: 14px;
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(221,42,123,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .link-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+      transition: transform 0.3s ease, fill 0.3s ease;
     }
 
     .link-btn:hover {
-      transform: scale(1.05) translateY(-2px);
-      box-shadow: 0 5px 15px rgba(221,42,123,0.4);
+      transform: scale(1.07) translateY(-2px);
+      box-shadow: 0 8px 25px rgba(221,42,123,0.5);
+      filter: brightness(1.2);
     }
+
+    .link-btn:hover svg {transform: scale(1.2);}
 
     .cta-buttons {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      margin-top: 15px;
+      gap: 16px;
+      margin-top: 18px;
     }
 
     .cta-btn {
-      padding: 14px;
-      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 16px;
       font-weight: bold;
       text-decoration: none;
       color: #fff;
       background: linear-gradient(45deg,#ff512f,#dd2476);
+      box-shadow: 0 6px 20px rgba(221,42,123,0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
     }
 
+    .cta-btn svg {width: 24px; height: 24px; fill: #fff;}
+
     .cta-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(221,42,123,0.6);
-      filter: brightness(1.2);
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba(221,42,123,0.7);
+      filter: brightness(1.25);
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #888;
-    }
+    footer {text-align: center; font-size: 0.8rem; color: #888;}
   </style>
 </head>
 <body>
@@ -206,12 +208,21 @@
     </div>
 
     <div class="links fade-in" style="animation-delay:1s;">
-      <a href="https://instagram.com/mohammedaliloui" target="_blank" class="link-btn">📸 Instagram</a>
-      <a href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" class="link-btn">💬 Telegram</a>
+      <a href="https://instagram.com/mohammedaliloui" target="_blank" class="link-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-.9 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5a3.7 3.7 0 0 1-1.5-1c-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 .9-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.4-.3 1-.4 2-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1 .2 1.6.4 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.1 1 .3 2 .4 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.4.3-1 .4-2 .1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.1-1-.3-2-.4-1.3-.1-1.7-.1-4.8-.1zM12 5.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 10.2a4 4 0 1 0 0-8.1 4 4 0 0 0 0 8.1zm6.4-10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg>
+        Instagram
+      </a>
+      <a href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" class="link-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.04 15.39 8.88 19c.35 0 .5-.15.68-.33l1.64-1.57 3.41 2.49c.62.35 1.05.17 1.2-.57l2.17-10.21c.22-.97-.35-1.35-.98-1.12L3.9 11.1c-.93.35-.9.85-.16 1.07l3.94 1.23 9.1-5.73c.43-.28.83-.13.5.15l-7.25 7.57z"/></svg>
+        Telegram
+      </a>
     </div>
 
     <div class="cta-buttons fade-in" style="animation-delay:1.1s;">
-      <a href="https://instagram.com/mohammedaliloui" target="_blank" class="cta-btn">👀 Suivez-moi maintenant</a>
+      <a href="https://instagram.com/mohammedaliloui" target="_blank" class="cta-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5S14.7 2 12 2 7 4.3 7 7s2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
+        Suivez-moi maintenant
+      </a>
     </div>
 
     <footer class="fade-in" style="animation-delay:1.2s;">

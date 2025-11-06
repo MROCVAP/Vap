@@ -1,234 +1,208 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohammed Aliloui | Trader & Entrepreneur</title>
-  <style>
-    :root {
-      --grad-colors: linear-gradient(270deg, #f58529, #dd2a7b, #8134af, #515bd4);
-      --bg-dark: #0d0d12;
-      --text-light: #fdfdfd;
-      --text-muted: #b5b5b5;
-      --card-bg: rgba(255,255,255,0.08);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mohammed Aliloui | Spécialiste du marché de l’or</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0a0a0a;
+  --gold:#d4af37;
+  --gold-light:#f5d06b;
+  --text:#f2f2f2;
+  --muted:rgba(255,255,255,0.6);
+  --card-bg:rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: radial-gradient(circle at 30% 10%, rgba(212,175,55,0.06), transparent 60%), #000;
+  color:var(--text);
+  font-family:"Cairo",sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  min-height:100vh;
+}
+.container{
+  width:100%;
+  max-width:460px;
+}
+.card{
+  background:rgba(0,0,0,0.72);
+  border:1px solid rgba(212,175,55,0.08);
+  border-radius:18px;
+  padding:28px 20px 34px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,0.6);
+  text-align:center;
+}
+.avatar{
+  width:134px;height:134px;border-radius:50%;
+  margin:-94px auto 14px;
+  border:4px solid var(--gold);
+  overflow:hidden;
+  background:#111;
+  box-shadow:0 6px 24px rgba(212,175,55,0.18);
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+h1{margin:8px 0 4px;font-size:22px;letter-spacing:0.2px}
+h1 span{color:var(--gold);margin-left:6px}
+.role{color:var(--gold-light);font-size:14px;margin-bottom:10px}
+.bio{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:16px}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', 'Cairo', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: var(--grad-colors);
-      background-size: 800% 800%;
-      animation: gradientBG 20s ease infinite;
-      color: var(--text-light);
-    }
+/* الأزرار مع SVG */
+.actions{display:flex;flex-direction:column;gap:12px;margin:6px 0}
+.btn{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+  text-decoration:none;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  color:#050505;
+  font-weight:700;
+  padding:12px;
+  border-radius:12px;
+  width:100%;
+  transition:transform .18s, box-shadow .18s;
+  border:none;
+}
+.btn:focus{outline:3px solid rgba(212,175,55,0.15)}
+.btn--dark{
+  background:linear-gradient(90deg,#0f0f0f,#0b0b0b);
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.03);
+  justify-content:flex-start;
+  padding-left:14px;
+}
+.btn svg{width:20px;height:20px;flex:0 0 20px}
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+/* VIP زر مميز مع أيقونة */
+.vip-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+  padding:12px 20px;
+  border-radius:40px;
+  text-decoration:none;
+  color:#050505;
+  font-weight:800;
+  background:linear-gradient(90deg,#d4af37,#f5d06b,#d4af37);
+  background-size:200% 100%;
+  animation:glow 3s linear infinite;
+  box-shadow:0 10px 30px rgba(212,175,55,0.2);
+}
+@keyframes glow{0%{background-position:0%}100%{background-position:200%}}
+.vip-btn svg{width:18px;height:18px;}
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
-    }
+/* أقسام */
+.section-title{
+  display:inline-block;
+  color:var(--gold);
+  font-weight:700;
+  margin:28px 0 12px;
+  font-size:16px;
+  padding-bottom:6px;
+  border-bottom:1px solid rgba(212,175,55,0.14);
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:12px;
+}
+.gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;transition:transform .25s;cursor:pointer}
+.gallery img:hover{transform:scale(1.05)}
+.testimonials{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.testimonial{
+  background:var(--card-bg);
+  border-radius:10px;padding:10px;
+  text-align:right;color:var(--muted);font-size:14px;
+  border:1px solid rgba(212,175,55,0.06);
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+}
+.footer{font-size:12px;color:rgba(255,255,255,0.28);margin-top:18px;text-align:center}
 
-    @keyframes fadeInUp {
-      to {opacity:1; transform:translateY(0);}
-    }
-
-    .profile-card {
-      background: var(--card-bg);
-      border-radius: 25px;
-      padding: 35px 30px;
-      max-width: 480px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(221,42,123,0.4) inset;
-      backdrop-filter: blur(20px);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .profile-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 35px rgba(221,42,123,0.5) inset;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      top: -40%;
-      left: -40%;
-      width: 180%;
-      height: 180%;
-      background: var(--grad-colors);
-      opacity: 0.12;
-      filter: blur(120px);
-      z-index: 0;
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
-    }
-
-    .avatar {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px;
-      border: 5px solid rgba(255,255,255,0.2);
-      background: var(--grad-colors);
-      background-clip: padding-box;
-      position: relative;
-      box-shadow: 0 8px 25px rgba(221,42,123,0.5), 0 0 15px rgba(255,255,255,0.2) inset;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .avatar:hover {
-      box-shadow: 0 15px 35px rgba(221,42,123,0.7), 0 0 20px rgba(255,255,255,0.3) inset;
-    }
-
-    .avatar:hover img {
-      transform: scale(1.12);
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-    }
-
-    h1 {font-size: 1.85rem; margin: 5px 0 5px;}
-    .username {color: var(--text-muted); font-size: 1rem; margin-bottom: 15px;}
-    .bio {font-size: 1rem; line-height: 1.6; color: #e0e0e0; margin-bottom: 15px;}
-    .bio-extra {font-size: 0.9rem; line-height: 1.4; color: #cfcfcf; margin-bottom: 20px;}
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      z-index: 2;
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    .link-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: var(--grad-colors);
-      border: none;
-      color: #fff;
-      padding: 14px;
-      border-radius: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(221,42,123,0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    }
-
-    .link-btn svg {
-      width: 22px;
-      height: 22px;
-      fill: #fff;
-      transition: transform 0.3s ease, fill 0.3s ease;
-    }
-
-    .link-btn:hover {
-      transform: scale(1.07) translateY(-2px);
-      box-shadow: 0 8px 25px rgba(221,42,123,0.5);
-      filter: brightness(1.2);
-    }
-
-    .link-btn:hover svg {transform: scale(1.2);}
-
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .cta-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px;
-      border-radius: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(45deg,#ff512f,#dd2476);
-      box-shadow: 0 6px 20px rgba(221,42,123,0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    }
-
-    .cta-btn svg {width: 24px; height: 24px; fill: #fff;}
-
-    .cta-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 35px rgba(221,42,123,0.7);
-      filter: brightness(1.25);
-    }
-
-    footer {text-align: center; font-size: 0.8rem; color: #888;}
-  </style>
+/* responsive */
+@media (max-width:420px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .card{padding:22px}
+}
+</style>
 </head>
 <body>
-
-  <div class="profile-card fade-in">
-    <div class="avatar fade-in" style="animation-delay:0.2s;">
-      <img src="https://i.postimg.cc/3JDhxcw4/IMG-5165.jpg" alt="Mohammed Aliloui">
+<div class="container">
+  <div class="card" role="region" aria-label="Profile card Mohammed Aliloui">
+    <div class="avatar" aria-hidden="true">
+      <img src="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg" alt="صورة Mohammed Aliloui">
     </div>
 
-    <h1 class="fade-in" style="animation-delay:0.4s;">Mohammed Aliloui ♛</h1>
-    <div class="username fade-in" style="animation-delay:0.5s;">@mohammedaliloui</div>
+    <h1>Mohammed Aliloui <span>♛</span></h1>
+    <div class="role">Spécialiste du marché de l’or — مختص في الذهب</div>
 
-    <div class="bio fade-in" style="animation-delay:0.6s;">
-      Meilleur trader professionnel sur les marchés financiers 🇲🇦<br>
-      Plus de 5 ans d'expérience dans le trading d'actions, de crypto-monnaies et des marchés mondiaux<br>
-      Collaborations avec des entreprises d'investissement renommées<br>
-      Réputé pour son professionnalisme, sa fiabilité et la constance de ses profits
+    <div class="bio">
+      تاجر محترف من المغرب — أكثر من 5 سنوات خبرة في أسواق الذهب والأسهم والعملات الرقمية. منهج دقيق في التحليل وإدارة المخاطر لتحقيق أرباح مستمرة.
     </div>
 
-    <div class="bio-extra fade-in" style="animation-delay:0.7s;">
-      💡 Philosophie de trading : patience, analyse précise et gestion intelligente des risques
-    </div>
-
-    <div class="links fade-in" style="animation-delay:1s;">
-      <a href="https://instagram.com/mohammedaliloui" target="_blank" class="link-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-.9 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5a3.7 3.7 0 0 1-1.5-1c-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 .9-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.4-.3 1-.4 2-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1 .2 1.6.4 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.1 1 .3 2 .4 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.4.3-1 .4-2 .1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.1-1-.3-2-.4-1.3-.1-1.7-.1-4.8-.1zM12 5.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 10.2a4 4 0 1 0 0-8.1 4 4 0 0 0 0 8.1zm6.4-10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg>
-        Instagram
+    <div class="actions" aria-hidden="false">
+      <!-- Instagram button with SVG -->
+      <a class="btn" href="https://www.instagram.com/mohammedaliloui" target="_blank" rel="noopener" aria-label="Instagram Mohammed Aliloui">
+        <!-- Instagram SVG -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="black" stroke-width="1.4" fill="black" />
+          <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" stroke="black" stroke-width="1.4" fill="black"/>
+          <circle cx="17.3" cy="6.7" r="0.6" fill="black"/>
+        </svg>
+        انستغرام
       </a>
-      <a href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" class="link-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.04 15.39 8.88 19c.35 0 .5-.15.68-.33l1.64-1.57 3.41 2.49c.62.35 1.05.17 1.2-.57l2.17-10.21c.22-.97-.35-1.35-.98-1.12L3.9 11.1c-.93.35-.9.85-.16 1.07l3.94 1.23 9.1-5.73c.43-.28.83-.13.5.15l-7.25 7.57z"/></svg>
-        Telegram
-      </a>
-    </div>
 
-    <div class="cta-buttons fade-in" style="animation-delay:1.1s;">
-      <a href="https://instagram.com/mohammedaliloui" target="_blank" class="cta-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5S14.7 2 12 2 7 4.3 7 7s2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg>
-        Suivez-moi maintenant
+      <!-- Telegram button dark style with SVG -->
+      <a class="btn btn--dark" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" rel="noopener" aria-label="Telegram Mohammed Aliloui">
+        <!-- Telegram SVG -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+          <path d="M22 3L2 10.5l5.5 2.2L10 21l3-4 6.9 4.1L22 3z" fill="currentColor"/>
+        </svg>
+        تيليغرام
       </a>
     </div>
 
-    <footer class="fade-in" style="animation-delay:1.2s;">
-      © 2025 – Page de présentation professionnelle
-    </footer>
+    <div class="section-title">📈 النتائج والأرباح</div>
+    <div class="gallery" aria-label="معرض الأرباح">
+      <img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1">
+      <img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2">
+      <img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3">
+      <img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4">
+      <img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5">
+      <img src="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg" alt="Profile / Profit">
+    </div>
+
+    <div class="section-title" style="margin-top:18px">💬 آراء العملاء</div>
+    <div class="testimonials" aria-live="polite">
+      <div class="testimonial">"بفضل نصائحه، بدأت أرباحي تصبح مستقرة—شكراً محمد!"</div>
+      <div class="testimonial">"احترافية ونتائج حقيقية، أنصح بالانضمام." </div>
+      <div class="testimonial">"دعم ومتابعة ممتازة من فريقه، أفضل استثمار قمت به."</div>
+    </div>
+
+    <!-- VIP button with SVG flame/crown icon -->
+    <div style="display:flex;justify-content:center">
+      <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" rel="noopener" aria-label="انضم الى مجموعة VIP">
+        <!-- flame / spark SVG -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+          <path d="M12 2s4 3 4.5 6.5S12 11 12 11s-1.8-2.4-1.8-4.6C10.2 4 12 2 12 2z" fill="black"/>
+          <path d="M8 13c0 2.8 2 5 4 5s4-2.2 4-5c0-3.6-4-6-4-6s-4 2.4-4 6z" fill="black" opacity="0.9"/>
+        </svg>
+        🔥 انضم إلى مجموعة الـ VIP
+      </a>
+    </div>
+
+    <div class="footer">© 2025 — Mohammed Aliloui</div>
   </div>
+</div>
 
 </body>
 </html>

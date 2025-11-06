@@ -25,7 +25,7 @@ body{
   padding:28px;
   min-height:100vh;
 }
-.container{width:100%;max-width:650px;}
+.container{width:100%;max-width:700px;}
 .card{
   background:rgba(0,0,0,0.85);
   border:1px solid rgba(212,175,55,0.15);
@@ -109,55 +109,63 @@ h1 span{color:var(--gold);margin-left:6px;}
   font-weight:700;margin:24px 0 12px;font-size:16px;
   padding-bottom:6px;border-bottom:1px solid rgba(255,200,0,0.14);
 }
-.profit-chart, .balance-chart{
+.interactive-chart{
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
-  height:120px;
-  margin:12px 0 24px 0;
+  height:200px;
+  margin:20px 0;
   gap:8px;
 }
-.profit-chart .bar, .balance-chart .bar{
-  width:14%;
+.chart-bar{
+  width:16%;
   background:linear-gradient(180deg,#f5d06b,#d4af37);
-  border-radius:6px 6px 0 0;
-  transform:scaleY(0);
-  transform-origin:bottom;
-  animation:grow 1s ease-out forwards;
-}
-@keyframes grow{
-  to{transform:scaleY(var(--height,1));}
-}
-.profit-chart .bar:hover, .balance-chart .bar:hover{
-  filter:brightness(1.2);
+  border-radius:8px 8px 0 0;
+  color:#fff;
+  font-weight:700;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
   cursor:pointer;
+  position:relative;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.profit-chart .bar::after, .balance-chart .bar::after{
+.chart-bar::after{
   content:attr(title);
-  display:block;
-  text-align:center;
-  font-size:12px;
-  color:var(--gold-light);
-  margin-top:4px;
-}
-.leverage-info{
+  position:absolute;
+  top:-20px;
   font-size:14px;
   color:var(--gold-light);
-  margin-bottom:12px;
-  font-weight:600;
+  font-weight:700;
 }
-.challenges ul{
-  color:var(--text-light);list-style:none;padding-left:0;margin-top:4px;
+.chart-bar:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(212,175,55,0.6);
 }
-.challenges ul li::before{
-  content:"🔥";margin-right:6px;
+.features-section{
+  margin:20px 0;
+  max-height:250px;
+  overflow-y:auto;
+  border:1px solid rgba(212,175,55,0.3);
+  border-radius:12px;
+  padding:12px;
+  background:rgba(0,0,0,0.4);
 }
-.wisdom{
-  background:rgba(212,175,55,0.05);
-  border-left:3px solid var(--gold);
-  padding:8px 12px;
-  border-radius:8px;
-  margin-bottom:16px;
+.features-section ul{
+  list-style:none;
+  padding-left:0;
+  color:var(--gold-light);
+  column-count:3;
+  column-gap:12px;
+}
+.features-section ul li{
+  padding:4px 0;
+  cursor:pointer;
+  transition:transform 0.2s, color 0.2s;
+}
+.features-section ul li:hover{
+  transform:translateX(5px);
+  color:#fff;
 }
 .gallery{
   display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;
@@ -182,7 +190,6 @@ h1 span{color:var(--gold);margin-left:6px;}
   color:var(--muted);font-size:14px;border:1px solid rgba(255,200,0,0.06);
   box-shadow:0 6px 18px rgba(0,0,0,0.35);
 }
-.testimonial strong{color:var(--gold);}
 .clients-count{
   color:var(--gold-light);font-weight:700;margin-top:16px;font-size:14px;
 }
@@ -191,127 +198,107 @@ h1 span{color:var(--gold);margin-left:6px;}
   .gallery{grid-template-columns:repeat(2,1fr);}
   .card{padding:120px 16px 28px;}
   .avatar{width:120px;height:120px;top:-20px;}
+  .features-section ul{column-count:2;}
 }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="card">
-    <!-- الصورة والاسم -->
-    <div class="avatar">
-      <img src="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg" alt="Photo de Mohammed Aliloui">
-    </div>
-    <h1>Mohammed Aliloui <span>♛</span></h1>
-    <div class="role">Spécialiste du marché de l’or — مختص في الذهب</div>
-    <div class="stars">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-    </div>
-
-    <!-- نص حماسي -->
-    <div class="section-title">💪 Motivation & Stratégie</div>
-    <div class="bio" style="color:var(--gold-light);font-weight:600;">
-      Maximisez vos gains, apprenez des stratégies professionnelles et transformez vos investissements en succès réels.
-      Suivi personnalisé pour chaque trader et résultats garantis!
-    </div>
-
-    <!-- أزرار التواصل -->
-    <div class="actions">
-      <a class="btn-animated" href="https://www.instagram.com/mohammedaliloui" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" class="icon">
-          <defs>
-            <linearGradient id="instGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#f58529"/>
-              <stop offset="50%" stop-color="#dd2a7b"/>
-              <stop offset="100%" stop-color="#515bd4"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#instGrad)" d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
-          <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#instGrad)" stroke-width="2" fill="none"/>
-        </svg>
-        Instagram
-      </a>
-      <a class="btn-animated btn-telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" class="icon">
-          <circle cx="12" cy="12" r="10" fill="#00BFFF"/>
-          <path fill="#fff" d="M22 3L2 10.5l5.5 2.2L10 21l3-4 6.9 4.1L22 3z"/>
-        </svg>
-        Telegram
-      </a>
-    </div>
-
-    <!-- VIP -->
-    <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" rel="noopener">
-      🔥 Rejoignez le VIP
-      <span class="sparkle"></span>
-      <span class="sparkle"></span>
-      <span class="sparkle"></span>
-    </a>
-
-    <!-- مخطط الأرباح -->
-    <div class="section-title">📈 Résultats & Profits</div>
-    <div class="profit-chart">
-      <div class="bar" style="--height:0.3;" title="Semaine 1"></div>
-      <div class="bar" style="--height:0.55;" title="Semaine 2"></div>
-      <div class="bar" style="--height:0.75;" title="Semaine 3"></div>
-      <div class="bar" style="--height:0.85;" title="Semaine 4"></div>
-      <div class="bar" style="--height:1;" title="Semaine 5"></div>
-    </div>
-
-    <!-- مخطط الحساب ورافعة مالية -->
-    <div class="section-title">🚀 Développement du compte & Levier</div>
-    <div class="balance-chart">
-      <div class="bar" style="--height:0.3;" title="Semaine 1"></div>
-      <div class="bar" style="--height:0.5;" title="Semaine 2"></div>
-      <div class="bar" style="--height:0.7;" title="Semaine 3"></div>
-      <div class="bar" style="--height:0.85;" title="Semaine 4"></div>
-      <div class="bar" style="--height:1;" title="Semaine 5"></div>
-    </div>
-    <div class="leverage-info">🔥 Levier utilisé: <strong>1:50</strong></div>
-
-    <!-- التحديات -->
-    <div class="challenges">
-      <h4 style="color:var(--gold);margin:8px 0;">Défis du mois</h4>
-      <ul>
-        <li>Atteindre 10% de profit sans risques excessifs</li>
-        <li>Maintenir le capital > 95% malgré les fluctuations</li>
-        <li>Diversifier vos trades sur 3 marchés différents</li>
-        <li>Défi VIP: Profiter d’un effet levier de 1:100 en toute sécurité</li>
-      </ul>
-    </div>
-
-    <!-- الحكمة -->
-    <div class="wisdom">
-      💡 Secret du succès : "Toujours protéger votre capital, avant de chercher le profit."
-    </div>
-
-    <!-- معرض النتائج -->
-    <div class="gallery">
-      <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1" data-caption="Profit 1"><div class="overlay">Profit 1</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2" data-caption="Profit 2"><div class="overlay">Profit 2</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3" data-caption="Profit 3"><div class="overlay">Profit 3</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4" data-caption="Profit 4"><div class="overlay">Profit 4</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5" data-caption="Profit 5"><div class="overlay">Profit 5</div></div>
-    </div>
-
-    <!-- عدد العملاء -->
-    <div class="clients-count">👥 Plus de <strong>1729 clients</strong> satisfaits!</div>
-
-    <!-- تعليقات العملاء -->
-    <div class="section-title">💬 Avis des clients</div>
-    <div class="testimonials">
-      <div class="testimonial">"Grâce à ses conseils, mes profits sont devenus stables — Merci Mohammed!"</div>
-      <div class="testimonial">"Professionnalisme et résultats réels, je recommande fortement."</div>
-      <div class="testimonial">"Support et suivi excellents, le meilleur investissement que j’ai fait."</div>
-    </div>
-
-    <div class="footer">© 2025 — Mohammed Aliloui</div>
+<div class="card">
+  <div class="avatar">
+    <img src="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg" alt="Photo de Mohammed Aliloui">
   </div>
+  <h1>Mohammed Aliloui <span>♛</span></h1>
+  <div class="role">Spécialiste du marché de l’or — مختص في الذهب</div>
+  <div class="stars">
+    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+  </div>
+  <div class="bio">
+    Trader professionnel du Maroc — Plus de 5 ans d’expérience sur les marchés de l’or, actions et crypto-monnaies.
+  </div>
+
+  <!-- أزرار التواصل -->
+  <div class="actions">
+    <a class="btn-animated" href="https://www.instagram.com/mohammedaliloui" target="_blank">Instagram</a>
+    <a class="btn-animated btn-telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">Telegram</a>
+  </div>
+
+  <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
+    🔥 Rejoignez le VIP
+    <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
+  </a>
+
+  <!-- المخططات التفاعلية -->
+  <div class="section-title">🚀 Développement du compte & Levier</div>
+  <div class="interactive-chart">
+    <div class="chart-bar" data-value="30" title="Semaine 1">30%</div>
+    <div class="chart-bar" data-value="55" title="Semaine 2">55%</div>
+    <div class="chart-bar" data-value="70" title="Semaine 3">70%</div>
+    <div class="chart-bar" data-value="85" title="Semaine 4">85%</div>
+    <div class="chart-bar" data-value="100" title="Semaine 5">100%</div>
+  </div>
+  <div class="leverage-info">🔥 Levier utilisé: <strong>1:50</strong></div>
+
+  <!-- ميزات المتداول -->
+  <div class="section-title">💎 309 Avantages & Caractéristiques</div>
+  <div class="features-section">
+    <ul>
+      <li>Analyse précise du marché</li>
+      <li>Stratégies testées et approuvées</li>
+      <li>Maximisation du profit</li>
+      <li>Gestion rigoureuse du risque</li>
+      <li>Support client rapide</li>
+      <li>Formation continue</li>
+      <li>Investissements sécurisés</li>
+      <li>Techniques avancées de trading</li>
+      <li>Suivi personnalisé</li>
+      <li>Transparence totale</li>
+      <!-- يمكنك إضافة بقية 309 عناصر هنا بطريقة مماثلة -->
+    </ul>
+  </div>
+
+  <!-- معرض النتائج -->
+  <div class="section-title">📈 Résultats & Profits</div>
+  <div class="gallery">
+    <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1"><div class="overlay">Profit 1</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2"><div class="overlay">Profit 2</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3"><div class="overlay">Profit 3</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4"><div class="overlay">Profit 4</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5"><div class="overlay">Profit 5</div></div>
+  </div>
+
+  <!-- عدد العملاء -->
+  <div class="clients-count">👥 Plus de <strong>1729 clients</strong> satisfaits!</div>
+
+  <!-- تعليقات العملاء -->
+  <div class="section-title">💬 Avis des clients</div>
+  <div class="testimonials">
+    <div class="testimonial">"Grâce à ses conseils, mes profits sont devenus stables — Merci Mohammed!"</div>
+    <div class="testimonial">"Professionnalisme et résultats réels, je recommande fortement."</div>
+    <div class="testimonial">"Support et suivi excellents, le meilleur investissement que j’ai fait."</div>
+  </div>
+
+  <!-- الحكمة -->
+  <div class="bio" style="margin-top:16px;color:var(--gold);font-weight:700;">
+    💡 Secret du succès : "Toujours protéger votre capital avant de chercher le profit."
+  </div>
+
+  <div class="footer">© 2025 — Mohammed Aliloui</div>
+</div>
 </div>
 
 <script>
 const galleryImages = document.querySelectorAll('.gallery img');
 galleryImages.forEach(img=>{
   img.onload = ()=>img.classList.add('visible');
+});
+
+const chartBars = document.querySelectorAll('.chart-bar');
+chartBars.forEach(bar=>{
+  bar.addEventListener('mouseenter',()=>{
+    const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3'); // صوت عند Hover
+    audio.play();
+  });
 });
 </script>
 </body>

@@ -142,31 +142,6 @@ h1 span{color:var(--gold);margin-left:6px;}
   transform:scale(1.1);
   box-shadow:0 0 20px rgba(212,175,55,0.6);
 }
-.features-section{
-  margin:20px 0;
-  max-height:250px;
-  overflow-y:auto;
-  border:1px solid rgba(212,175,55,0.3);
-  border-radius:12px;
-  padding:12px;
-  background:rgba(0,0,0,0.4);
-}
-.features-section ul{
-  list-style:none;
-  padding-left:0;
-  color:var(--gold-light);
-  column-count:3;
-  column-gap:12px;
-}
-.features-section ul li{
-  padding:4px 0;
-  cursor:pointer;
-  transition:transform 0.2s, color 0.2s;
-}
-.features-section ul li:hover{
-  transform:translateX(5px);
-  color:#fff;
-}
 .gallery{
   display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;
 }
@@ -198,7 +173,6 @@ h1 span{color:var(--gold);margin-left:6px;}
   .gallery{grid-template-columns:repeat(2,1fr);}
   .card{padding:120px 16px 28px;}
   .avatar{width:120px;height:120px;top:-20px;}
-  .features-section ul{column-count:2;}
 }
 </style>
 </head>
@@ -219,70 +193,45 @@ h1 span{color:var(--gold);margin-left:6px;}
 
   <!-- أزرار التواصل -->
   <div class="actions">
-    <a class="btn-animated" href="https://www.instagram.com/mohammedaliloui" target="_blank">Instagram</a>
-    <a class="btn-animated btn-telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">Telegram</a>
+    <a class="btn-animated" href="https://www.instagram.com/mohammedaliloui" target="_blank" id="inst-btn">
+      <svg class="icon" viewBox="0 0 24 24"><path fill="#fff" d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.405a4.92 4.92 0 0 1 1.78 1.035 4.92 4.92 0 0 1 1.035 1.78c.165.46.352 1.26.406 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.406 2.43a4.92 4.92 0 0 1-1.035 1.78 4.92 4.92 0 0 1-1.78 1.035c-.46.165-1.26.352-2.43.406-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.406a4.92 4.92 0 0 1-1.78-1.035 4.92 4.92 0 0 1-1.035-1.78c-.165-.46-.352-1.26-.406-2.43C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.054-1.17.24-1.97.406-2.43a4.92 4.92 0 0 1 1.035-1.78 4.92 4.92 0 0 1 1.78-1.035c.46-.165 1.26-.352 2.43-.406C8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.16 0-3.53.012-4.78.07-1.05.046-1.62.208-1.998.35-.503.188-.864.412-1.246.794-.382.382-.606.743-.794 1.246-.142.378-.304.948-.35 1.998-.058 1.25-.07 1.62-.07 4.78s.012 3.53.07 4.78c.046 1.05.208 1.62.35 1.998.188.503.412.864.794 1.246.382.382.743.606 1.246.794.378.142.948.304 1.998.35 1.25.058 1.62.07 4.78.07s3.53-.012 4.78-.07c1.05-.046 1.62-.208 1.998-.35.503-.188.864-.412 1.246-.794.382-.382.606-.743.794-1.246.142-.378.304-.948.35-1.998.058-1.25.07-1.62.07-4.78s-.012-3.53-.07-4.78c-.046-1.05-.208-1.62-.35-1.998-.188-.503-.412-.864-.794-1.246-.382-.382-.743-.606-1.246-.794-.378-.142-.948-.304-1.998-.35-1.25-.058-1.62-.07-4.78-.07zm0 3.2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm4.9-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+      Instagram
+    </a>
+    <a class="btn-animated btn-telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" id="tg-btn">
+      <svg class="icon" viewBox="0 0 24 24"><path fill="#fff" d="M22 3L2 10.5l5.5 2.2L10 21l3-4 6.9 4.1L22 3z"/></svg>
+      Telegram
+    </a>
   </div>
 
-  <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
+  <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" id="vip-btn">
+    <svg class="icon" viewBox="0 0 24 24"><path fill="#fff" d="M12 2L15 8H9l3-6zM2 22h20l-2-6H4l-2 6z"/></svg>
     🔥 Rejoignez le VIP
     <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
   </a>
 
-  <!-- المخططات التفاعلية -->
+  <!-- المخطط -->
   <div class="section-title">🚀 Développement du compte & Levier</div>
   <div class="interactive-chart">
     <div class="chart-bar" data-value="30" title="Semaine 1">30%</div>
     <div class="chart-bar" data-value="55" title="Semaine 2">55%</div>
     <div class="chart-bar" data-value="70" title="Semaine 3">70%</div>
     <div class="chart-bar" data-value="85" title="Semaine 4">85%</div>
-    <div class="chart-bar" data-value="100" title="Semaine 5">100%</div>
-  </div>
-  <div class="leverage-info">🔥 Levier utilisé: <strong>1:50</strong></div>
-
-  <!-- ميزات المتداول -->
-  <div class="section-title">💎 309 Avantages & Caractéristiques</div>
-  <div class="features-section">
-    <ul>
-      <li>Analyse précise du marché</li>
-      <li>Stratégies testées et approuvées</li>
-      <li>Maximisation du profit</li>
-      <li>Gestion rigoureuse du risque</li>
-      <li>Support client rapide</li>
-      <li>Formation continue</li>
-      <li>Investissements sécurisés</li>
-      <li>Techniques avancées de trading</li>
-      <li>Suivi personnalisé</li>
-      <li>Transparence totale</li>
-      <!-- يمكنك إضافة بقية 309 عناصر هنا بطريقة مماثلة -->
-    </ul>
+    <div class="chart-bar" data-value="95" title="Semaine 5">95%</div>
   </div>
 
-  <!-- معرض النتائج -->
-  <div class="section-title">📈 Résultats & Profits</div>
+  <div class="section-title">📈 Résultats et profits</div>
   <div class="gallery">
-    <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1"><div class="overlay">Profit 1</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2"><div class="overlay">Profit 2</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3"><div class="overlay">Profit 3</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4"><div class="overlay">Profit 4</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5"><div class="overlay">Profit 5</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1" data-caption="Profit 1"><div class="overlay">Profit 1</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2" data-caption="Profit 2"><div class="overlay">Profit 2</div></div>
+    <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3" data-caption="Profit 3"><div class="overlay">Profit 3</div></div>
   </div>
 
-  <!-- عدد العملاء -->
-  <div class="clients-count">👥 Plus de <strong>1729 clients</strong> satisfaits!</div>
-
-  <!-- تعليقات العملاء -->
   <div class="section-title">💬 Avis des clients</div>
   <div class="testimonials">
     <div class="testimonial">"Grâce à ses conseils, mes profits sont devenus stables — Merci Mohammed!"</div>
     <div class="testimonial">"Professionnalisme et résultats réels, je recommande fortement."</div>
-    <div class="testimonial">"Support et suivi excellents, le meilleur investissement que j’ai fait."</div>
   </div>
-
-  <!-- الحكمة -->
-  <div class="bio" style="margin-top:16px;color:var(--gold);font-weight:700;">
-    💡 Secret du succès : "Toujours protéger votre capital avant de chercher le profit."
-  </div>
-
+  <div class="clients-count">🌟 Plus de 1,729 clients satisfaits</div>
   <div class="footer">© 2025 — Mohammed Aliloui</div>
 </div>
 </div>
@@ -293,11 +242,17 @@ galleryImages.forEach(img=>{
   img.onload = ()=>img.classList.add('visible');
 });
 
-const chartBars = document.querySelectorAll('.chart-bar');
-chartBars.forEach(bar=>{
-  bar.addEventListener('mouseenter',()=>{
-    const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3'); // صوت عند Hover
-    audio.play();
+// أصوات عند الضغط على الأزرار
+const clickSound = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3');
+document.querySelectorAll('#inst-btn,#tg-btn,#vip-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>clickSound.play());
+});
+
+// أصوات عند Hover على المخطط
+document.querySelectorAll('.chart-bar').forEach(bar=>{
+  bar.addEventListener('mouseover',()=>{
+    const hoverSound = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+    hoverSound.play();
   });
 });
 </script>

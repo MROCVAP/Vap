@@ -1,307 +1,328 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammed Aliloui | Spécialiste du marché de l’or</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mohammed Aliloui — Spécialiste du marché de l'or</title>
+<meta name="description" content="Découvrez les stratégies d'or et le système ALGO de Mohammed Aliloui. Témoignages, vidéos et inscription VIP." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='18'>♛</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Structured data (Organisation / Person) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohammed Aliloui",
+  "url": "https://t.me/+xRF1J2vnqigzNDg0",
+  "sameAs": [
+    "https://www.instagram.com/mohammedaliloui",
+    "https://t.me/+xRF1J2vnqigzNDg0"
+  ],
+  "jobTitle": "Spécialiste du marché de l'or",
+  "description": "Trader professionnel — systèmes automatisés (ALGO) et formation sur le marché de l'or."
+}
+</script>
+
 <style>
-:root{
-  --bg-dark:#0a0a0a;
-  --text-light:#f2f2f2;
-  --muted:rgba(255,255,255,0.6);
-  --card-bg:rgba(255,255,255,0.03);
-  --gold:#d4af37;
-  --gold-light:#f5d06b;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{
-  font-family:"Cairo",sans-serif;
-  background: radial-gradient(circle at 30% 10%, rgba(255,255,255,0.03), transparent 60%), var(--bg-dark);
-  color:var(--text-light);
-  display:flex;
-  justify-content:center;
-  padding:28px;
-  min-height:100vh;
-}
-.container{width:100%;max-width:700px;}
-.card{
-  background:rgba(0,0,0,0.85);
-  border:1px solid rgba(212,175,55,0.15);
-  border-radius:24px;
-  padding:140px 20px 28px 20px;
-  position:relative;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.7);
-  transition:transform .3s;
-}
-.card:hover{transform:translateY(-2px);}
-.avatar{
-  width:140px;height:140px;
-  border-radius:50%;
-  border:5px solid var(--gold);
-  position:absolute;
-  top:-30px;
-  left:50%;
-  transform:translateX(-50%);
-  overflow:hidden;
-  box-shadow:0 8px 30px rgba(212,175,55,0.3);
-  background:#111;
-}
-.avatar img{width:100%;height:100%;object-fit:cover;}
-h1{margin-top:0;margin-bottom:6px;font-size:26px;color:#fff;}
-h1 span{color:var(--gold);margin-left:6px;}
-.pro-text{color:#fff;font-size:16px;font-weight:700;margin-bottom:12px;} /* Professionnel */
-.role{color:var(--gold-light);font-size:16px;margin-bottom:8px;font-weight:600;}
-.stars{color:#ffd700;font-size:18px;margin-bottom:12px;}
-.stars span{margin:0 2px;}
-.bio{color:var(--text-light);font-size:15px;line-height:1.6;margin-bottom:16px;}
-.actions{display:flex;flex-direction:row;gap:12px;margin-bottom:20px;justify-content:center;}
-.btn-animated{
-  display:inline-flex;align-items:center;gap:8px;justify-content:center;text-decoration:none;
-  font-weight:700;
-  padding:12px 18px;border-radius:12px;
-  transition:transform 0.3s, box-shadow 0.3s;
-  background:linear-gradient(270deg,#f58529,#dd2a7b,#515bd4);
-  background-size:400% 100%;
-  color:#fff;
-  animation:gradAnim 3s linear infinite;
-}
-.btn-animated:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,200,0,0.5);}
-@keyframes gradAnim{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-.btn-telegram{
-  background:#00BFFF;
-  animation:ping 2s infinite;
-}
-@keyframes ping{
-  0%,100%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-}
-.icon{width:24px;height:24px;transition:transform 0.3s;fill:#fff;}
-.btn-animated:hover .icon, .btn-telegram:hover .icon{transform:scale(1.2) rotate(10deg);}
-.vip-btn{
-  display:inline-flex;align-items:center;gap:10px;margin-top:12px;padding:12px 20px;
-  border-radius:40px;text-decoration:none;color:#fff;font-weight:800;
-  background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af,#515bd4);
-  background-size:200% 100%;animation:glow 3s linear infinite,pulse 2s infinite;
-  box-shadow:0 10px 30px rgba(255,200,0,0.3);
-  position:relative;transition:transform 0.2s,box-shadow 0.3s;
-}
-.vip-btn:hover{transform:scale(1.08);box-shadow:0 15px 40px rgba(255,200,0,0.5);}
-.vip-btn .sparkle{
-  position:absolute;width:6px;height:6px;background:#fff;border-radius:50%;
-  top:50%;left:50%;transform:translate(-50%,-50%) scale(0);opacity:0;
-  animation:sparkle 1.2s infinite;
-}
-.vip-btn .sparkle:nth-child(1){animation-delay:0s;}
-.vip-btn .sparkle:nth-child(2){animation-delay:0.3s;}
-.vip-btn .sparkle:nth-child(3){animation-delay:0.6s;}
-@keyframes glow{0%{background-position:0%}100%{background-position:200%}}
-@keyframes pulse{0%{box-shadow:0 0 15px rgba(255,200,0,0.2);}50%{box-shadow:0 0 35px rgba(255,200,0,0.45);}100%{box-shadow:0 0 15px rgba(255,200,0,0.2);}}
-@keyframes sparkle{0%{transform:translate(-50%,-50%) scale(0);opacity:0;}50%{transform:translate(calc(-50%+6px),calc(-50%-6px)) scale(1);opacity:1;}100%{transform:translate(-50%,-50%) scale(0);opacity:0;}}
-.section-title{
-  display:inline-block;color:var(--gold);
-  font-weight:700;margin:24px 0 12px;font-size:16px;
-  padding-bottom:6px;border-bottom:1px solid rgba(255,200,0,0.14);
-}
-.interactive-chart{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  height:200px;
-  margin:20px 0;
-  gap:8px;
-}
-.chart-bar{
-  width:16%;
-  background:linear-gradient(180deg,#f5d06b,#d4af37);
-  border-radius:8px 8px 0 0;
-  color:#fff;
-  font-weight:700;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  cursor:pointer;
-  position:relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.chart-bar::after{
-  content:attr(title);
-  position:absolute;
-  top:-20px;
-  font-size:14px;
-  color:var(--gold-light);
-  font-weight:700;
-}
-.chart-bar:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px rgba(212,175,55,0.6);
-}
-.features-section{
-  margin:20px 0;
-  max-height:250px;
-  overflow-y:auto;
-  border:1px solid rgba(212,175,55,0.3);
-  border-radius:12px;
-  padding:12px;
-  background:rgba(0,0,0,0.4);
-}
-.features-section ul{
-  list-style:none;
-  padding-left:0;
-  color:var(--gold-light);
-  column-count:3;
-  column-gap:12px;
-}
-.features-section ul li{
-  padding:4px 0;
-  cursor:pointer;
-  transition:transform 0.2s, color 0.2s;
-}
-.features-section ul li:hover{
-  transform:translateX(5px);
-  color:#fff;
-}
-.gallery{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;
-}
-.gallery-item{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;}
-.gallery img{
-  width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;
-  transition:transform .25s, box-shadow .25s,opacity .5s;
-  opacity:0;transform:translateY(20px);
-}
-.gallery img.visible{opacity:1;transform:translateY(0);}
-.gallery img:hover{transform:scale(1.05);box-shadow:0 6px 18px rgba(255,200,0,0.4);}
-.overlay{
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.6);color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:600;opacity:0;transition:opacity 0.25s;
-}
-.gallery-item:hover .overlay{opacity:1;}
-.testimonials{display:flex;flex-direction:column;gap:12px;margin-top:12px;}
-.testimonial{
-  background:var(--card-bg);border-radius:10px;padding:12px;text-align:right;
-  color:var(--muted);font-size:14px;border:1px solid rgba(255,200,0,0.06);
-  box-shadow:0 6px 18px rgba(0,0,0,0.35);
-}
-.clients-count{
-  color:var(--gold-light);font-weight:700;margin-top:16px;font-size:14px;
-}
-.footer{font-size:12px;color:rgba(255,255,255,0.28);margin-top:18px;text-align:center;}
-@media(max-width:420px){
-  .gallery{grid-template-columns:repeat(2,1fr);}
-  .card{padding:120px 16px 28px;}
-  .avatar{width:120px;height:120px;top:-20px;}
-  .features-section ul{column-count:2;}
-}
+  :root{
+    --bg:#050505;
+    --panel:#0f0f0f;
+    --gold:#d4af37;
+    --gold-600:#c9a227;
+    --muted:rgba(255,255,255,0.7);
+    --glass:rgba(255,255,255,0.03);
+    --accent-gradient: linear-gradient(90deg,#f58529,#dd2a7b,#8134af,#515bd4);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;font-family:"Cairo",sans-serif}
+  html,body{height:100%}
+  body{
+    background:
+      radial-gradient(circle at 10% 10%, rgba(212,175,55,0.03), transparent 30%),
+      var(--bg);
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+  }
+
+  /* Layout */
+  .wrap{max-width:1100px;margin:0 auto;padding:24px}
+  header{
+    text-align:center;padding:48px 16px 30px;
+  }
+  .title{
+    font-size:1.55rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.6px;
+  }
+  .subtitle{color:var(--muted);margin-top:10px;font-size:1rem}
+
+  /* Main video placeholder */
+  .hero{
+    width:100%;
+    margin:26px auto;
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:20px;
+    align-items:start;
+  }
+  .video-frame{
+    background:linear-gradient(180deg,#0a0a0a, #181818);
+    border:2px dashed rgba(212,175,55,0.18);
+    border-radius:12px;padding:16px;
+    min-height:320px;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    position:relative;overflow:hidden;
+  }
+  .video-frame .play{
+    width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg, rgba(212,175,55,0.95), rgba(212,175,55,0.8));
+    color:#000;font-weight:800;font-size:22px;cursor:pointer;border:0;box-shadow:0 14px 40px rgba(212,175,55,0.12);
+  }
+  .video-frame .video-label{margin-top:12px;color:var(--muted)}
+  .video-frame .ghost{position:absolute;inset:0;pointer-events:none;background:
+    linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.25) 60%);}
+  .sidebar{
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .card{
+    background:var(--panel);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);
+    box-shadow:0 8px 30px rgba(0,0,0,0.55);
+  }
+  .headline{color:var(--gold);font-weight:700;margin-bottom:8px}
+  .muted{color:var(--muted);font-size:0.98rem}
+
+  /* Profile */
+  .profile{
+    display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:18px;
+  }
+  .avatar{
+    width:124px;height:124px;border-radius:50%;overflow:hidden;border:4px solid var(--gold);
+    box-shadow:0 10px 35px rgba(212,175,55,0.14);
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .name{font-size:1.1rem;color:#fff;font-weight:700}
+  .role{color:var(--gold-600);font-weight:600}
+
+  /* Buttons */
+  .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:0;
+    text-decoration:none;font-weight:700;cursor:pointer;
+  }
+  .btn.inst{background:var(--accent-gradient);color:#fff}
+  .btn.tg{background:#229ED9;color:#fff}
+  .btn.wa{background:#25D366;color:#000}
+  .vip{background:linear-gradient(90deg, rgba(212,175,55,0.95), rgba(212,175,55,0.8)); color:#000}
+
+  /* Testimonials grid */
+  .section{margin:36px 0}
+  .section .sec-title{color:var(--gold);font-weight:700;margin-bottom:12px;text-align:center}
+  .testi-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px;
+  }
+  .testi{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+    color:var(--muted);font-size:0.97rem;min-height:100px;
+  }
+  .testi .who{font-weight:700;color:var(--gold);margin-bottom:6px}
+
+  /* ALGO section */
+  .algo{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin-top:18px;
+  }
+  .algo .result-box{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+    text-align:center;color:var(--muted)
+  }
+
+  /* Footer */
+  footer{margin:48px 0 18px;text-align:center;color:rgba(255,255,255,0.35)}
+
+  /* small screens */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:18px}
+    .sidebar{order:2}
+    .video-frame{order:1}
+    .algo{grid-template-columns:1fr}
+  }
+
+  /* Simple entrance animations */
+  .fade-up{transform:translateY(12px);opacity:0;transition:transform .55s ease,opacity .55s ease}
+  .in-view{transform:none;opacity:1}
+  /* focus outlines */
+  a:focus,button:focus{outline:3px solid rgba(212,175,55,0.18);outline-offset:2px}
 </style>
 </head>
 <body>
-<div class="container">
-<div class="card">
-  <div class="avatar">
-    <img src="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg" alt="Photo de Mohammed Aliloui">
-  </div>
-  <h1>Mohammed Aliloui <span>♛</span></h1>
-  <div class="pro-text">Professionnel</div>
-  <div class="role">Spécialiste du marché de l’or</div>
-  <div class="stars">
-    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-  </div>
-  <div class="bio">
-    Trader professionnel du Maroc — Plus de 5 ans d’expérience sur les marchés de l’or, actions et crypto-monnaies.
-  </div>
+  <div class="wrap">
+    <header>
+      <div class="title">Ce que votre banquier ne veut pas que vous sachiez 💰</div>
+      <div class="subtitle">Bagi t3rf lhaqiqa dial Trading ? — Découvrez la vérité et comment fonctionne notre ALGO.</div>
+    </header>
 
-  <!-- Boutons de contact -->
-  <div class="actions">
-    <a class="btn-animated" href="https://www.instagram.com/mohammedaliloui" target="_blank">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.055 1.954.24 2.41.403a4.91 4.91 0 011.77 1.043 4.91 4.91 0 011.043 1.77c.163.456.348 1.24.403 2.41.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.24 1.954-.403 2.41a4.91 4.91 0 01-1.043 1.77 4.91 4.91 0 01-1.77 1.043c-.456.163-1.24.348-2.41.403-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.954-.24-2.41-.403a4.91 4.91 0 01-1.77-1.043 4.91 4.91 0 01-1.043-1.77c-.163-.456-.348-1.24-.403-2.41C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.055-1.17.24-1.954.403-2.41a4.91 4.91 0 011.043-1.77 4.91 4.91 0 011.77-1.043c.456-.163 1.24-.348 2.41-.403C8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.17 0-3.547.012-4.797.07-1.04.048-1.605.22-1.98.367a3.16 3.16 0 00-1.14.738 3.16 3.16 0 00-.738 1.14c-.147.375-.319.94-.367 1.98-.058 1.25-.07 1.627-.07 4.797s.012 3.547.07 4.797c.048 1.04.22 1.605.367 1.98.17.437.393.82.738 1.14.32.345.703.568 1.14.738.375.147.94.319 1.98.367 1.25.058 1.627.07 4.797.07s3.547-.012 4.797-.07c1.04-.048 1.605-.22 1.98-.367a3.16 3.16 0 001.14-.738 3.16 3.16 0 00.738-1.14c.147-.375.319-.94.367-1.98.058-1.25.07-1.627.07-4.797s-.012-3.547-.07-4.797c-.048-1.04-.22-1.605-.367-1.98a3.16 3.16 0 00-.738-1.14 3.16 3.16 0 00-1.14-.738c-.375-.147-.94-.319-1.98-.367-1.25-.058-1.627-.07-4.797-.07zM12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 1.8a4.4 4.4 0 110 8.8 4.4 4.4 0 010-8.8zm6.406-1.2a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-    </a>
-    <a class="btn-animated btn-telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.62 82.01l-19.61 92.57c-1.48 6.82-5.37 8.51-10.86 5.33l-29.99-22.11-14.46 13.91c-1.6 1.6-2.95 2.95-6.05 2.95l2.17-30.44 55.44-50.08c2.41-2.17-0.52-3.39-3.72-1.22l-68.63 43.15-29.58-9.21c-6.43-2-6.55-6.43 1.34-9.51l115.66-44.64c5.32-2 9.99 1.33 8.88 9.1z"/></svg>
-    </a>
+    <main class="hero" role="main">
+      <!-- VIDEO / LEFT -->
+      <div class="video-frame card fade-up" id="mainVideo">
+        <!-- play button overlay -->
+        <button aria-label="Lire la vidéo principale" class="play" id="playMain" title="Lire la vidéo (placeholder)">
+          ▶
+        </button>
+        <div class="video-label">🎥 Emplacement pour la vidéo principale</div>
+        <div style="margin-top:12px">
+          <a href="#" class="btn vip" id="reserveBtn" title="Réserve ta place">Réserve ta place</a>
+          <a href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" rel="noopener" class="btn tg" style="margin-left:8px">Rejoindre le VIP</a>
+        </div>
+        <div class="ghost" aria-hidden="true"></div>
+      </div>
+
+      <!-- SIDEBAR / RIGHT -->
+      <aside class="sidebar">
+        <div class="card profile fade-up" tabindex="0" aria-labelledby="whoName">
+          <div class="avatar" aria-hidden="false">
+            <!-- use local profile.jpg if available; fallback to hosted image -->
+            <img src="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg" alt="Photo de Mohammed Aliloui" loading="lazy">
+          </div>
+          <div id="whoName" class="name">Mohammed Aliloui</div>
+          <div class="role">Spécialiste du marché de l’or — مختص في الذهب</div>
+          <div class="muted" style="margin-top:8px">Trader professionnel • Créateur de Simo Invest • ALGO developer</div>
+
+          <div class="btns" style="margin-top:14px">
+            <a href="https://www.instagram.com/mohammedaliloui" target="_blank" rel="noopener" class="btn inst" title="Instagram">Instagram</a>
+            <a href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" rel="noopener" class="btn tg" title="Telegram">Telegram</a>
+            <a href="#" class="btn wa" title="WhatsApp (à ajouter)">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card fade-up" style="margin-top:14px" tabindex="0">
+          <div class="headline">📈 Résultats & Preuves</div>
+          <div class="muted">Des captures et preuves réelles — (galerie + vidéos disponibles ci-dessous)</div>
+          <div style="display:flex;gap:8px;margin-top:12px;justify-content:center">
+            <!-- small thumbnails (lazy-loaded) -->
+            <img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Proof 1" loading="lazy" width="64" height="64" style="border-radius:8px;object-fit:cover;border:2px solid rgba(212,175,55,0.06)">
+            <img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Proof 2" loading="lazy" width="64" height="64" style="border-radius:8px;object-fit:cover;border:2px solid rgba(212,175,55,0.06)">
+            <img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Proof 3" loading="lazy" width="64" height="64" style="border-radius:8px;object-fit:cover;border:2px solid rgba(212,175,55,0.06)">
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Témoignages -->
+    <section class="section fade-up" id="temoignages">
+      <div class="sec-title">💬 Témoignages & Avis</div>
+      <div class="testi-grid">
+        <div class="testi" tabindex="0"><div class="who">Client A</div>"Grâce à Simo Invest, j’ai appris à comprendre le vrai trading et mes gains sont stables."</div>
+        <div class="testi" tabindex="0"><div class="who">Client B</div>"Accompagnement sérieux, stratégie claire, résultats visibles chaque semaine."</div>
+        <div class="testi" tabindex="0"><div class="who">Client C</div>"Formation pratique et ALGO performant — recommande à 100%."</div>
+        <div class="testi" tabindex="0"><div class="who">Client D</div>"Support réactif et roadmap claire pour progresser."</div>
+      </div>
+
+      <div style="margin-top:18px;text-align:center;color:var(--muted)">
+        <div style="max-width:1100px;margin:0 auto;padding:10px">
+          <div class="video-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+            <div class="video-frame video-placeholder card fade-up" style="min-height:160px">
+              <button class="play" aria-label="Lire témoignage 1">▶</button>
+              <div class="video-label">🎬 Vidéo témoignage 1 (placeholder)</div>
+            </div>
+            <div class="video-frame video-placeholder card fade-up" style="min-height:160px">
+              <button class="play" aria-label="Lire témoignage 2">▶</button>
+              <div class="video-label">🎬 Vidéo témoignage 2 (placeholder)</div>
+            </div>
+            <div class="video-frame video-placeholder card fade-up" style="min-height:160px">
+              <button class="play" aria-label="Lire témoignage 3">▶</button>
+              <div class="video-label">🎬 Vidéo témoignage 3 (placeholder)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALGO -->
+    <section class="section fade-up" id="algo">
+      <div class="sec-title">🤖 Système Automatisé — ALGO</div>
+      <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:18px">
+        <div>
+          <p class="muted">Système automatique conçu pour analyser le marché de l'or et exécuter des opportunités avec gestion de risque stricte. (Cadre pédagogique + comptes réels de démonstration).</p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px">
+            <div class="result-box">📈 Performance moyenne (mois)</div>
+            <div class="result-box">⚙️ Exécution 24/7</div>
+            <div class="result-box">🔒 Gestion du risque</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <a href="https://t.me/+xRF1J2vnqigzNDg0" class="btn tg" target="_blank" rel="noopener">Rejoindre le VIP</a>
+            <a href="#" class="btn vip" id="demoAlgo">Voir la démo (placeholder)</a>
+          </div>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <div style="font-weight:700;color:var(--gold);margin-bottom:8px">Résultats récents (exemple)</div>
+          <div style="color:var(--muted);font-size:0.98rem">
+            <ul style="text-align:left;padding-left:18px;margin-top:8px">
+              <li>+38% performance mensuelle (compte démo)</li>
+              <li>Stop loss serrés — ratio risk/reward optimisé</li>
+              <li>Backtests et journaux publiables sur demande</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 — Simo Invest | Mohammed Aliloui • <span style="color:var(--muted)">Tous droits réservés</span>
+    </footer>
   </div>
-
-  <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
-    🔥 Rejoignez le VIP
-    <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
-  </a>
-
-  <!-- Diagrammes interactifs -->
-  <div class="interactive-chart">
-    <div class="chart-bar" title="Semaine 1" style="height:30%;"></div>
-    <div class="chart-bar" title="Semaine 2" style="height:55%;"></div>
-    <div class="chart-bar" title="Semaine 3" style="height:70%;"></div>
-    <div class="chart-bar" title="Semaine 4" style="height:85%;"></div>
-    <div class="chart-bar" title="Semaine 5" style="height:100%;"></div>
-  </div>
-  <div class="bio" style="margin-top:8px;color:var(--gold);font-weight:700;">
-    🔥 Levier utilisé : <strong>1:50</strong>
-  </div>
-
-  <!-- Fonctionnalités -->
-  <div class="section-title">Caractéristiques</div>
-  <div class="features-section">
-    <ul>
-      <li>Analyse précise du marché</li>
-      <li>Stratégies testées et approuvées</li>
-      <li>Maximisation du profit</li>
-      <li>Gestion rigoureuse du risque</li>
-      <li>Support client rapide</li>
-      <li>Formation continue</li>
-      <li>Investissements sécurisés</li>
-      <li>Techniques avancées de trading</li>
-      <li>Suivi personnalisé</li>
-      <li>Transparence totale</li>
-    </ul>
-  </div>
-
-  <!-- Galerie -->
-  <div class="section-title">Résultats & Profits</div>
-  <div class="gallery">
-    <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1"><div class="overlay">Profit 1</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2"><div class="overlay">Profit 2</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3"><div class="overlay">Profit 3</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4"><div class="overlay">Profit 4</div></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5"><div class="overlay">Profit 5</div></div>
-  </div>
-
-  <div class="clients-count">👥 Plus de <strong>1729 clients</strong> satisfaits!</div>
-
-  <!-- Témoignages -->
-  <div class="section-title">Avis des clients</div>
-  <div class="testimonials">
-    <div class="testimonial">"Grâce à ses conseils, mes profits sont devenus stables — Merci Mohammed!"</div>
-    <div class="testimonial">"Professionnalisme et résultats réels, je recommande fortement."</div>
-    <div class="testimonial">"Support et suivi excellents, le meilleur investissement que j’ai fait."</div>
-  </div>
-
-  <div class="bio" style="margin-top:16px;color:var(--gold);font-weight:700;">
-    💡 Secret du succès : "Toujours protéger votre capital avant de chercher le profit."
-  </div>
-
-  <div class="footer">© 2025 — Mohammed Aliloui</div>
-</div>
-</div>
 
 <script>
-const galleryImages = document.querySelectorAll('.gallery img');
-galleryImages.forEach(img=>{
-  img.onload = ()=>img.classList.add('visible');
-});
+  // Simple intersection observer to animate elements into view
+  (function(){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('in-view');
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  })();
 
-const chartBars = document.querySelectorAll('.chart-bar');
-chartBars.forEach(bar=>{
-  bar.addEventListener('mouseover',()=>{ 
-    const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3');
-    audio.play();
+  // Play button behaviour (placeholders): show simple modal with message
+  function showModal(title){
+    // simple accessible alert-ish modal
+    const dlg = document.createElement('div');
+    dlg.style.position='fixed';dlg.style.inset='0';dlg.style.display='flex';dlg.style.alignItems='center';dlg.style.justifyContent='center';
+    dlg.style.background='rgba(0,0,0,0.7)';dlg.style.zIndex=9999;
+    const box = document.createElement('div');
+    box.style.background='#0b0b0b';box.style.padding='18px';box.style.borderRadius='12px';box.style.maxWidth='520px';box.style.color='#fff';
+    box.innerHTML = `<strong style="color:${'${0}'}">${title}</strong><p style="color:rgba(255,255,255,0.75);margin-top:8px">Vidéo placeholder — vous pouvez remplacer par un embed YouTube ou un fichier .mp4.</p>`;
+    const btn = document.createElement('button');
+    btn.textContent='Fermer';btn.style.marginTop='12px';btn.style.padding='8px 12px';btn.style.borderRadius='8px';
+    btn.onclick = ()=>document.body.removeChild(dlg);
+    box.appendChild(btn);
+    dlg.appendChild(box);
+    document.body.appendChild(dlg);
+    btn.focus();
+  }
+
+  document.querySelectorAll('.video-frame .play').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const label = btn.nextElementSibling && btn.nextElementSibling.textContent ? btn.nextElementSibling.textContent : 'Lecture';
+      showModal(label);
+    });
   });
-});
+
+  // Reserve button quick action (just opens telegram as example)
+  document.getElementById('reserveBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    // open telegram to join or send message - adjust as needed
+    window.open('https://t.me/+xRF1J2vnqigzNDg0','_blank','noopener');
+  });
+
+  // demoAlgo button
+  document.getElementById('demoAlgo').addEventListener('click', function(e){
+    e.preventDefault();
+    showModal('Démo ALGO (placeholder)');
+  });
 </script>
 </body>
 </html>

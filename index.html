@@ -4,7 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohammed Aliloui — Spécialiste du marché de l'or | Simo Invest</title>
+<meta name="description" content="Formation & accompagnement gratuits sur le marché de l'or.">
+<meta name="keywords" content="Trader, Or, Investissement, Formation, VIP, Maroc">
+<meta name="author" content="Mohammed Aliloui">
+<meta property="og:title" content="Mohammed Aliloui — Spécialiste du marché de l'or">
+<meta property="og:description" content="Formation & accompagnement gratuits sur le marché de l'or.">
+<meta property="og:image" content="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg">
+<meta property="og:url" content="https://fmm7md.com/">
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#050406;
@@ -17,19 +26,77 @@
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Cairo",sans-serif;}
-body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transparent 35%), linear-gradient(180deg,#040405,#0a0a0b);color:#fff;line-height:1.5;padding-bottom:60px;}
+body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transparent 35%), linear-gradient(180deg,#040405,#0a0a0b);color:#fff;line-height:1.5;padding-bottom:60px;scroll-behavior:smooth;}
 .wrap{max-width:1100px;margin:0 auto;padding:24px;}
 
-/* Header */
-header{text-align:center;padding:40px 12px 20px}
-.hero-title{color:var(--gold);font-weight:800;font-size:2rem;text-transform:uppercase;margin-bottom:8px;}
-.hero-sub{color:var(--muted);max-width:880px;margin:0 auto;font-size:1rem;}
-.hero-cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.icon-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,#0b0b0b,#111111);border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .18s;text-decoration:none;color:#fff;font-weight:600;font-size:0.95rem;}
-.icon-btn:hover{transform:translateY(-4px);}
-.svg-glow{filter:drop-shadow(0 6px 18px rgba(212,175,55,0.18));}
+/* Neon Glowing Hero Title */
+.hero-title {
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af, #515bd4, #f58529);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonGlow 6s ease infinite, gradientShift 5s ease infinite;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
 
-/* Hero + sidebar grid */
+@keyframes neonGlow {
+  0%,100% {text-shadow: 0 0 10px #fff,0 0 20px #f58529,0 0 30px #dd2a7b,0 0 40px #8134af,0 0 50px #515bd4;}
+  50% {text-shadow: 0 0 20px #fff,0 0 30px #f58529,0 0 40px #dd2a7b,0 0 50px #8134af,0 0 60px #515bd4;}
+}
+
+@keyframes gradientShift {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Hero Subtitle */
+.hero-sub {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.3);
+  font-size:1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+/* Hero CTA Icons Neon */
+.icon-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#0b0b0b,#111111);
+  border:1px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+  transition:transform .3s;
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  font-size:0.95rem;
+}
+.icon-btn svg{
+  width:20px;height:20px;
+  margin-right:6px;
+  animation: glowIcon 2s infinite alternate;
+}
+.icon-btn:hover svg{
+  transform: scale(1.3) rotate(10deg);
+}
+@keyframes glowIcon {
+  0% {filter: drop-shadow(0 0 2px #f58529) drop-shadow(0 0 4px #dd2a7b);}
+  50% {filter: drop-shadow(0 0 6px #8134af) drop-shadow(0 0 8px #515bd4);}
+  100% {filter: drop-shadow(0 0 2px #f58529) drop-shadow(0 0 4px #dd2a7b);}
+}
+
+/* Grid layout */
 .hero-area{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;margin-top:28px;}
 @media(max-width:980px){.hero-area{grid-template-columns:1fr;}}
 
@@ -59,6 +126,7 @@ header{text-align:center;padding:40px 12px 20px}
   background-size:200% 100%;animation:glow 3s linear infinite,pulse 2s infinite;
   box-shadow:0 10px 30px rgba(255,200,0,0.3);
   position:relative;transition:transform 0.2s,box-shadow 0.3s;text-align:center;
+  cursor:pointer;
 }
 .vip-btn:hover{transform:scale(1.08);box-shadow:0 15px 40px rgba(255,200,0,0.5);}
 .vip-btn .sparkle{position:absolute;width:6px;height:6px;background:#fff;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);opacity:0;animation:sparkle 1.2s infinite;}
@@ -70,17 +138,22 @@ header{text-align:center;padding:40px 12px 20px}
 @keyframes sparkle{0%{transform:translate(-50%,-50%) scale(0);opacity:0;}50%{transform:translate(calc(-50%+6px),calc(-50%-6px)) scale(1);opacity:1;}100%{transform:translate(-50%,-50%) scale(0);opacity:0;}}
 
 /* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:12px;}
 .gallery-item{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;}
 .gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .25s,box-shadow .25s,opacity .5s;opacity:0;transform:translateY(20px);}
 .gallery img.visible{opacity:1;transform:translateY(0);}
-.gallery img:hover{transform:scale(1.05);box-shadow:0 6px 18px rgba(255,200,0,0.4);}
+.gallery img:hover{transform:scale(1.05) rotate(-2deg);box-shadow:0 6px 18px rgba(255,200,0,0.4);}
 .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;}
 .gallery-item:hover .overlay{opacity:1;}
 
-/* Testimonials */
-.testimonials{display:flex;flex-direction:column;gap:12px;margin-top:12px;}
-.testimonial{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px;text-align:right;color:var(--muted);font-size:14px;border:1px solid rgba(255,200,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+/* Testimonials + Comments */
+.testimonials,.comments{display:flex;flex-direction:column;gap:12px;margin-top:12px;}
+.testimonial,.comment{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px;text-align:right;color:var(--muted);font-size:14px;border:1px solid rgba(255,200,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+.comment-author{font-weight:700;color:var(--gold);margin-bottom:4px;}
+.comment-input{margin-top:12px;display:flex;gap:6px;}
+.comment-input input{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(0,0,0,0.4);color:#fff;}
+.comment-input button{padding:8px 12px;border-radius:8px;background:var(--gold);color:#000;font-weight:700;border:none;cursor:pointer;transition:transform .2s;}
+.comment-input button:hover{transform:scale(1.05);}
 
 /* Footer */
 footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weight:700;}
@@ -88,18 +161,29 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
 /* Animations fade-up */
 .fade-up{transform:translateY(14px);opacity:0;transition:transform .6s ease,opacity .6s ease;}
 .in-view{transform:none;opacity:1;}
-@media(max-width:640px){.video-thumbnail{height:180px}.video-frame{min-height:260px;}}
+
+/* Responsive */
+@media(max-width:640px){
+  .video-thumbnail{height:180px}
+  .video-frame{min-height:260px;}
+  .hero-title{font-size:2rem;}
+  .hero-sub{font-size:1rem;}
+}
 </style>
 </head>
 <body>
 
 <div class="wrap">
   <header>
-    <div class="hero-title">Ce que votre banquier ne veut pas que vous sachiez</div>
+    <div class="hero-title">Secret du succès: "Toujours protéger votre capital avant de chercher le profit."</div>
     <div class="hero-sub">Formation & accompagnement GRATUITS — preuves réelles, vidéos pédagogiques et groupe d'entraide.</div>
     <div class="hero-cta">
-      <a class="icon-btn" href="https://www.instagram.com/mohammedaliloui" target="_blank">Instagram</a>
-      <a class="icon-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">Telegram</a>
+      <a class="icon-btn" href="https://www.instagram.com/mohammedaliloui" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7,2H17A5,5 0 0,1 22,7V17A5,5 0 0,1 17,22H7A5,5 0 0,1 2,17V7A5,5 0 0,1 7,2M12,7.5A4.5,4.5 0 1,0 16.5,12A4.5,4.5 0 0,0 12,7.5Z"/></svg> Instagram
+      </a>
+      <a class="icon-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9,12L15,12L12,17L9,12M21,3C21,1.89 20.11,1 19,1H5C3.89,1 3,1.89 3,3V21C3,22.11 3.89,23 5,23H19C20.11,23 21,22.11 21,21V3Z"/></svg> Telegram
+      </a>
     </div>
   </header>
 
@@ -122,7 +206,7 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
           <a class="icon-btn" href="https://www.instagram.com/mohammedaliloui" target="_blank">Instagram</a>
           <a class="icon-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">Telegram</a>
         </div>
-        <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
+        <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" title="Rejoignez le groupe VIP maintenant!">
           🔥 Rejoignez le VIP
           <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
         </a>
@@ -130,77 +214,15 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
     </aside>
   </section>
 
-  <!-- SVG Chart -->
-  <section class="section fade-up" style="margin-top:40px;text-align:center;">
-    <h2 style="color:var(--gold);font-weight:800;margin-bottom:20px;">لماذا تختارنا؟</h2>
-    <svg width="100%" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="rgba(5,4,6,0.1)" rx="14"></rect>
-
-      <g transform="translate(100,50)">
-        <rect width="120" height="180" rx="12" fill="url(#grad1)"></rect>
-        <text x="60" y="200" font-size="16" font-weight="700" fill="var(--gold)" text-anchor="middle">تحفيز</text>
-        <text x="60" y="220" font-size="12" fill="var(--muted)" text-anchor="middle">كل شيء مجاني</text>
-        <circle cx="60" cy="40" r="24" fill="var(--gold-light)">
-          <text x="60" y="45" font-size="24" text-anchor="middle" fill="#000">⭐</text>
-        </circle>
-      </g>
-
-      <g transform="translate(300,50)">
-        <rect width="120" height="220" rx="12" fill="url(#grad2)"></rect>
-        <text x="60" y="240" font-size="16" font-weight="700" fill="var(--gold)" text-anchor="middle">ثقة</text>
-        <text x="60" y="260" font-size="12" fill="var(--muted)" text-anchor="middle">تدريب مستمر</text>
-        <circle cx="60" cy="40" r="24" fill="var(--gold-light)">
-          <text x="60" y="45" font-size="24" text-anchor="middle" fill="#000">💰</text>
-        </circle>
-      </g>
-
-      <g transform="translate(500,50)">
-        <rect width="120" height="150" rx="12" fill="url(#grad3)"></rect>
-        <text x="60" y="170" font-size="16" font-weight="700" fill="var(--gold)" text-anchor="middle">نجاح</text>
-        <text x="60" y="190" font-size="12" fill="var(--muted)" text-anchor="middle">مربح ومستدام</text>
-        <circle cx="60" cy="40" r="24" fill="var(--gold-light)">
-          <text x="60" y="45" font-size="24" text-anchor="middle" fill="#000">📈</text>
-        </circle>
-      </g>
-
-      <g transform="translate(700,50)">
-        <rect width="120" height="200" rx="12" fill="url(#grad4)"></rect>
-        <text x="60" y="220" font-size="16" font-weight="700" fill="var(--gold)" text-anchor="middle">أمان</text>
-        <text x="60" y="240" font-size="12" fill="var(--muted)" text-anchor="middle">شفافية كاملة</text>
-        <circle cx="60" cy="40" r="24" fill="var(--gold-light)">
-          <text x="60" y="45" font-size="24" text-anchor="middle" fill="#000">🔒</text>
-        </circle>
-      </g>
-
-      <defs>
-        <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#f5d06b"/>
-          <stop offset="100%" stop-color="#d4af37"/>
-        </linearGradient>
-        <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#d4af37"/>
-          <stop offset="100%" stop-color="#f5d06b"/>
-        </linearGradient>
-        <linearGradient id="grad3" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#f5d06b"/>
-          <stop offset="100%" stop-color="#d4af37"/>
-        </linearGradient>
-        <linearGradient id="grad4" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#d4af37"/>
-          <stop offset="100%" stop-color="#f5d06b"/>
-        </linearGradient>
-      </defs>
-    </svg>
-  </section>
-
   <!-- Gallery -->
   <section class="section fade-up">
+    <h2 style="color:var(--gold);font-weight:800;margin-bottom:12px;text-align:center;">Galerie des profits</h2>
     <div class="gallery">
-      <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1"><div class="overlay">Profit 1</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2"><div class="overlay">Profit 2</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3"><div class="overlay">Profit 3</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4"><div class="overlay">Profit 4</div></div>
-      <div class="gallery-item"><img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5"><div class="overlay">Profit 5</div></div>
+      <div class="gallery-item"><img src="https://i.postimg.cc/MHhtVQ19/IMG-5218.jpg" alt="Profit 1" loading="lazy"><div class="overlay">Profit 1</div></div>
+      <div class="gallery-item"><img src="https://i.postimg.cc/RC3k6QBK/IMG-5219.jpg" alt="Profit 2" loading="lazy"><div class="overlay">Profit 2</div></div>
+      <div class="gallery-item"><img src="https://i.postimg.cc/G245DrZ9/IMG-5220.jpg" alt="Profit 3" loading="lazy"><div class="overlay">Profit 3</div></div>
+      <div class="gallery-item"><img src="https://i.postimg.cc/Dw7pg1tN/IMG-5221.png" alt="Profit 4" loading="lazy"><div class="overlay">Profit 4</div></div>
+      <div class="gallery-item"><img src="https://i.postimg.cc/SKsT0kQg/IMG-5222.jpg" alt="Profit 5" loading="lazy"><div class="overlay">Profit 5</div></div>
     </div>
   </section>
 
@@ -211,6 +233,20 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
       <div class="testimonial">"Grâce à ses conseils, mes profits sont devenus stables — Merci Mohammed!"</div>
       <div class="testimonial">"Professionnalisme et résultats réels, je recommande fortement."</div>
       <div class="testimonial">"Support et suivi excellents, le meilleur investissement que j’ai fait."</div>
+    </div>
+  </section>
+
+  <!-- Comment Section -->
+  <section class="section fade-up">
+    <div class="title" style="color:var(--gold);font-weight:800;font-size:1.4rem;margin-bottom:8px;">Commentaires</div>
+    <div class="comments">
+      <div class="comment"><div class="comment-author">Ali M.</div>Super formation, très clair et motivant!</div>
+      <div class="comment"><div class="comment-author">Sara B.</div>Merci pour les conseils, ça change tout.</div>
+      <div class="comment"><div class="comment-author">Youssef O.</div>Contenu riche et résultats visibles rapidement.</div>
+    </div>
+    <div class="comment-input">
+      <input type="text" placeholder="Écrire un commentaire...">
+      <button>Envoyer</button>
     </div>
   </section>
 
@@ -225,6 +261,14 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
 
 const galleryImages = document.querySelectorAll('.gallery img');
 galleryImages.forEach(img=>{img.onload=()=>img.classList.add('visible');});
+
+// Typing effect for Hero Title (optional)
+const heroTitle = document.querySelector('.hero-title');
+let text = heroTitle.textContent;
+heroTitle.textContent = '';
+let i = 0;
+function typingEffect(){if(i<text.length){heroTitle.textContent+=text[i];i++;setTimeout(typingEffect,20);}}
+typingEffect();
 </script>
 
 </body>

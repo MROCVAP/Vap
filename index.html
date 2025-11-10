@@ -250,9 +250,36 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
     </div>
   </section>
 
+  <!-- Investment Growth Calculator -->
+  <section class="section fade-up">
+    <h2 style="color:var(--gold);font-weight:800;margin-bottom:12px;text-align:center;">حاسب نمو حسابك</h2>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:24px;">
+      <label style="font-weight:700;color:#fff;">رأس المال المبدئي ($):</label>
+      <input type="number" id="initialCapital" value="100" min="50" max="10000" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
+
+      <label style="font-weight:700;color:#fff;">نسبة المخاطرة لكل صفقة (%):</label>
+      <input type="number" id="riskPercent" value="2" min="0.1" max="10" step="0.1" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
+
+      <label style="font-weight:700;color:#fff;">متوسط الربح لكل صفقة (%):</label>
+      <input type="number" id="avgReturn" value="5" min="-50" max="50" step="0.1" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
+
+      <label style="font-weight:700;color:#fff;">عدد الصفقات الشهرية:</label>
+      <input type="number" id="tradesPerMonth" value="8" min="1" max="50" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
+
+      <button id="calculateBtn" class="vip-btn" style="margin-top:12px;">حساب النمو 🔥</button>
+    </div>
+
+    <div id="resultChart" style="width:100%;max-width:600px;margin:0 auto;">
+      <canvas id="growthChart" style="background:#111;border-radius:12px;padding:12px;"></canvas>
+    </div>
+  </section>
+
   <footer>© 2025 — Mohammed Aliloui | Tous droits réservés</footer>
 </div>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 (function(){
   const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view');});},{threshold:0.12});
@@ -262,221 +289,59 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
 const galleryImages = document.querySelectorAll('.gallery img');
 galleryImages.forEach(img=>{img.onload=()=>img.classList.add('visible');});
 
-// Typing effect for Hero Title (optional)
+// Typing effect for Hero Title
 const heroTitle = document.querySelector('.hero-title');
 let text = heroTitle.textContent;
 heroTitle.textContent = '';
 let i = 0;
 function typingEffect(){if(i<text.length){heroTitle.textContent+=text[i];i++;setTimeout(typingEffect,20);}}
 typingEffect();
+
+// Investment Growth Calculator
+document.getElementById('calculateBtn').addEventListener('click', function(){
+  const capital = parseFloat(document.getElementById('initialCapital').value);
+  const risk = parseFloat(document.getElementById('riskPercent').value)/100;
+  const avgReturn = parseFloat(document.getElementById('avgReturn').value)/100;
+  const trades = parseInt(document.getElementById('tradesPerMonth').value);
+
+  let balance = capital;
+  const balances = [balance.toFixed(2)];
+  const labels = ['البدء'];
+
+  for(let month=1; month<=12; month++){
+    const monthlyChange = balance * risk * avgReturn * trades;
+    balance += monthlyChange;
+    balances.push(balance.toFixed(2));
+    labels.push(`شهر ${month}`);
+  }
+
+  const ctx = document.getElementById('growthChart').getContext('2d');
+  if(window.growthChart) window.growthChart.destroy();
+  window.growthChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'رأس المال المتوقع ($)',
+        data: balances,
+        borderColor: 'rgba(212,175,55,0.9)',
+        backgroundColor: 'rgba(212,175,55,0.3)',
+        tension:0.3,
+        fill:true,
+        pointRadius:5
+      }]
+    },
+    options: {
+      responsive:true,
+      plugins:{legend:{display:true,labels:{color:'#fff'}}},
+      scales:{
+        x:{ticks:{color:'#fff'}},
+        y:{ticks:{color:'#fff'}}
+      }
+    }
+  });
+});
 </script>
 
 </body>
 </html>
-<section class="section fade-up">
-  <h2 style="color:var(--gold);font-weight:800;margin-bottom:12px;text-align:center;">Calculateur de croissance du compte — Ultra Neon + Sparkle</h2>
-
-  <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:24px;">
-    <label style="font-weight:700;color:#fff;">Capital initial ($) :</label>
-    <input type="number" id="initialCapitalSVG" value="100" min="50" max="10000" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-    <label style="font-weight:700;color:#fff;">Pourcentage de risque par trade (%) :</label>
-    <input type="number" id="riskPercentSVG" value="2" min="0.1" max="10" step="0.1" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-    <label style="font-weight:700;color:#fff;">Gain moyen par trade (%) :</label>
-    <input type="number" id="avgReturnSVG" value="5" min="-50" max="50" step="0.1" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-    <label style="font-weight:700;color:#fff;">Nombre de trades par mois :</label>
-    <input type="number" id="tradesPerMonthSVG" value="8" min="1" max="50" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-    <button id="calculateSVG" class="vip-btn" style="margin-top:12px;">Afficher le graphique animé 🔥</button>
-  </div>
-
-  <div id="svgChartContainer" style="width:100%;max-width:750px;height:450px;margin:0 auto;background:#111;border-radius:12px;position:relative;overflow:hidden;">
-    <svg id="svgChart" width="100%" height="100%" viewBox="0 0 750 450"></svg>
-    <div id="tooltip" style="position:absolute;padding:6px 10px;background:#f5d06b;color:#000;border-radius:6px;font-weight:700;font-size:12px;pointer-events:none;opacity:0;transition:0.2s;"></div>
-  </div>
-</section>
-
-<script>
-function generateUltraNeonChart(){
-  const capital = parseFloat(document.getElementById('initialCapitalSVG').value);
-  const risk = parseFloat(document.getElementById('riskPercentSVG').value)/100;
-  const avgReturn = parseFloat(document.getElementById('avgReturnSVG').value)/100;
-  const trades = parseInt(document.getElementById('tradesPerMonthSVG').value);
-
-  let balance = capital;
-  const balances = [balance];
-  const monthlyChanges = [];
-  for(let month=1; month<=12; month++){
-    const change = balance * risk * avgReturn * trades;
-    monthlyChanges.push(change);
-    balance += change;
-    balances.push(balance);
-  }
-
-  const svg = document.getElementById('svgChart');
-  svg.innerHTML = '';
-  const width = 750;
-  const height = 450;
-  const padding = 60;
-  const maxBalance = Math.max(...balances)*1.1;
-  const months = ["Jan","Fév","Mar","Avr","Mai","Jun","Jul","Aoû","Sep","Oct","Nov","Déc"];
-
-  // defs gradient & glow
-  const defs = document.createElementNS("http://www.w3.org/2000/svg",'defs');
-  defs.innerHTML = `
-    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f58529"/>
-      <stop offset="25%" stop-color="#dd2a7b"/>
-      <stop offset="50%" stop-color="#8134af"/>
-      <stop offset="75%" stop-color="#515bd4"/>
-      <stop offset="100%" stop-color="#f58529"/>
-      <animate attributeName="x1" values="0%;100%;0%" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="100%;0%;100%" dur="5s" repeatCount="indefinite"/>
-    </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  `;
-  svg.appendChild(defs);
-
-  // grid lines + vertical values
-  for(let i=0;i<=5;i++){
-    const y = padding + i*(height-2*padding)/5;
-    const line = document.createElementNS("http://www.w3.org/2000/svg",'line');
-    line.setAttribute('x1', padding);
-    line.setAttribute('y1', y);
-    line.setAttribute('x2', width-padding);
-    line.setAttribute('y2', y);
-    line.setAttribute('stroke','rgba(212,175,55,0.2)');
-    line.setAttribute('stroke-width','1');
-    svg.appendChild(line);
-
-    const val = Math.round(maxBalance*(5-i)/5);
-    const text = document.createElementNS("http://www.w3.org/2000/svg",'text');
-    text.setAttribute('x', padding-10);
-    text.setAttribute('y', y+5);
-    text.setAttribute('fill', '#f5d06b');
-    text.setAttribute('text-anchor', 'end');
-    text.setAttribute('font-size', '12');
-    text.setAttribute('font-weight', '700');
-    text.textContent = `$${val}`;
-    svg.appendChild(text);
-  }
-
-  const points = balances.map((b,i)=>{
-    const x = padding + i*(width-2*padding)/12;
-    const y = height-padding - (b/maxBalance)*(height-2*padding);
-    return {x,y,value:b};
-  });
-
-  // colonnes animées
-  points.slice(1).forEach((p,i)=>{
-    const prev = points[i];
-    const change = monthlyChanges[i];
-    const colHeight = Math.abs(p.y-prev.y);
-    const x = p.x-10;
-    const yStart = change>=0 ? p.y : prev.y;
-    const rect = document.createElementNS("http://www.w3.org/2000/svg",'rect');
-    rect.setAttribute('x', x);
-    rect.setAttribute('y', yStart+colHeight);
-    rect.setAttribute('width', 20);
-    rect.setAttribute('height', 0);
-    rect.setAttribute('fill', change>=0?'rgba(0,255,0,0.5)':'rgba(255,0,0,0.5)');
-    rect.setAttribute('filter','url(#glow)');
-    svg.appendChild(rect);
-
-    let h=0;
-    function animateRect(){
-      if(h<colHeight){
-        rect.setAttribute('y', yStart + colHeight - h);
-        rect.setAttribute('height', h);
-        h+=2;
-        requestAnimationFrame(animateRect);
-      }
-    }
-    animateRect();
-  });
-
-  // ligne neon principale
-  const mainPath = document.createElementNS("http://www.w3.org/2000/svg",'path');
-  mainPath.setAttribute('fill','none');
-  mainPath.setAttribute('stroke','url(#neonGradient)');
-  mainPath.setAttribute('stroke-width','4');
-  mainPath.setAttribute('stroke-linecap','round');
-  mainPath.setAttribute('stroke-linejoin','round');
-  mainPath.setAttribute('filter','url(#glow)');
-  svg.appendChild(mainPath);
-
-  let pathData='';
-  let i=0;
-  function animateLine(){
-    if(i<points.length){
-      pathData += (i===0?'M':' L') + points[i].x + ',' + points[i].y;
-      mainPath.setAttribute('d', pathData);
-      i++;
-      requestAnimationFrame(animateLine);
-    } else {
-      // Sparkle Neon points
-      points.forEach((p,index)=>{
-        const circle = document.createElementNS("http://www.w3.org/2000/svg",'circle');
-        circle.setAttribute('cx',p.x);
-        circle.setAttribute('cy',p.y);
-        circle.setAttribute('r',6);
-        circle.setAttribute('fill','#fff');
-        circle.setAttribute('stroke','url(#neonGradient)');
-        circle.setAttribute('stroke-width','2');
-        circle.setAttribute('filter','url(#glow)');
-        svg.appendChild(circle);
-
-        // Sparkle animation
-        const sparkle = document.createElementNS("http://www.w3.org/2000/svg",'circle');
-        sparkle.setAttribute('cx',p.x);
-        sparkle.setAttribute('cy',p.y);
-        sparkle.setAttribute('r',2);
-        sparkle.setAttribute('fill','#fff');
-        sparkle.setAttribute('opacity','0');
-        svg.appendChild(sparkle);
-
-        let scale=0;
-        function sparkleAnim(){
-          scale+=0.05;
-          const alpha = Math.abs(Math.sin(scale*3.14*2));
-          sparkle.setAttribute('opacity',alpha);
-          sparkle.setAttribute('r',2+4*alpha);
-          requestAnimationFrame(sparkleAnim);
-        }
-        sparkleAnim();
-
-        const text = document.createElementNS("http://www.w3.org/2000/svg",'text');
-        text.setAttribute('x',p.x);
-        text.setAttribute('y',height-20);
-        text.setAttribute('fill','#f5d06b');
-        text.setAttribute('text-anchor','middle');
-        text.setAttribute('font-size','12');
-        text.textContent = months[index];
-        svg.appendChild(text);
-
-        circle.addEventListener('mousemove',(e)=>{
-          const tooltip=document.getElementById('tooltip');
-          tooltip.style.left=(e.offsetX+15)+'px';
-          tooltip.style.top=(e.offsetY-25)+'px';
-          const change=index>0?monthlyChanges[index-1]:0;
-          tooltip.innerHTML=`Mois ${months[index]}: $${p.value.toFixed(2)} (${change>=0?'+':'')}${change.toFixed(2)})`;
-          tooltip.style.opacity=1;
-        });
-        circle.addEventListener('mouseleave',()=>{document.getElementById('tooltip').style.opacity=0;});
-      });
-    }
-  }
-  animateLine();
-}
-
-document.getElementById('calculateSVG').addEventListener('click',generateUltraNeonChart);
-</script>

@@ -7,7 +7,13 @@
 <meta name="description" content="Formation & accompagnement gratuits sur le marché de l'or.">
 <meta name="keywords" content="Trader, Or, Investissement, Formation, VIP, Maroc">
 <meta name="author" content="Mohammed Aliloui">
+<meta property="og:title" content="Mohammed Aliloui — Spécialiste du marché de l'or">
+<meta property="og:description" content="Formation & accompagnement gratuits sur le marché de l'or.">
+<meta property="og:image" content="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg">
+<meta property="og:url" content="https://fmm7md.com/">
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#050406;
@@ -18,18 +24,19 @@
   --glass:rgba(255,255,255,0.03);
   --accent-shadow:0 10px 30px rgba(212,175,55,0.12);
   --radius:14px;
+  --insta-gradient:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
 }
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Cairo",sans-serif;}
 body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transparent 35%), linear-gradient(180deg,#040405,#0a0a0b);color:#fff;line-height:1.5;padding-bottom:60px;scroll-behavior:smooth;}
 .wrap{max-width:1100px;margin:0 auto;padding:24px;}
 
-/* Neon Glowing Hero Title */
+/* Neon Hero Title */
 .hero-title {
   font-weight: 900;
   font-size: 2.5rem;
   text-transform: uppercase;
   color: #fff;
-  background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af, #515bd4, #f58529);
+  background: var(--insta-gradient);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -38,12 +45,10 @@ body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transpa
   line-height: 1.2;
   margin-bottom: 8px;
 }
-
 @keyframes neonGlow {
   0%,100% {text-shadow: 0 0 10px #fff,0 0 20px #f58529,0 0 30px #dd2a7b,0 0 40px #8134af,0 0 50px #515bd4;}
   50% {text-shadow: 0 0 20px #fff,0 0 30px #f58529,0 0 40px #dd2a7b,0 0 50px #8134af,0 0 60px #515bd4;}
 }
-
 @keyframes gradientShift {
   0% {background-position:0% 50%;}
   50% {background-position:100% 50%;}
@@ -70,7 +75,7 @@ body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transpa
   background:linear-gradient(90deg,#0b0b0b,#111111);
   border:1px solid rgba(255,255,255,0.03);
   cursor:pointer;
-  transition:transform .3s;
+  transition:transform .3s, background .3s;
   text-decoration:none;
   color:#fff;
   font-weight:600;
@@ -84,13 +89,16 @@ body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transpa
 .icon-btn:hover svg{
   transform: scale(1.3) rotate(10deg);
 }
+.icon-btn.instagram:hover{background:var(--insta-gradient);}
+.icon-btn.telegram:hover{background:#0088cc;}
+.icon-btn.whatsapp:hover{background:#25D366;}
 @keyframes glowIcon {
   0% {filter: drop-shadow(0 0 2px #f58529) drop-shadow(0 0 4px #dd2a7b);}
   50% {filter: drop-shadow(0 0 6px #8134af) drop-shadow(0 0 8px #515bd4);}
   100% {filter: drop-shadow(0 0 2px #f58529) drop-shadow(0 0 4px #dd2a7b);}
 }
 
-/* Grid layout */
+/* Hero Grid */
 .hero-area{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;margin-top:28px;}
 @media(max-width:980px){.hero-area{grid-template-columns:1fr;}}
 
@@ -127,27 +135,36 @@ body{background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transpa
 .vip-btn .sparkle:nth-child(1){animation-delay:0s;}
 .vip-btn .sparkle:nth-child(2){animation-delay:0.3s;}
 .vip-btn .sparkle:nth-child(3){animation-delay:0.6s;}
-@keyframes glow{0%{background-position:0%}100%{background-position:200%}}
-@keyframes pulse{0%{box-shadow:0 0 15px rgba(255,200,0,0.2);}50%{box-shadow:0 0 35px rgba(255,200,0,0.45);}100%{box-shadow:0 0 15px rgba(255,200,0,0.2);}}
-@keyframes sparkle{0%{transform:translate(-50%,-50%) scale(0);opacity:0;}50%{transform:translate(calc(-50%+6px),calc(-50%-6px)) scale(1);opacity:1;}100%{transform:translate(-50%,-50%) scale(0);opacity:0;}}
+
+/* Features & ALGO Sections */
+.features, .algo-section{margin-top:32px;display:grid;gap:18px;}
+.feature-item, .algo-item{background:var(--panel);padding:14px 18px;border-radius:12px;display:flex;align-items:flex-start;gap:12px;border:1px solid rgba(212,175,55,0.1);}
+.feature-item svg, .algo-item svg{width:28px;height:28px;flex-shrink:0;fill:var(--gold);margin-top:4px;}
+.feature-text, .algo-text{display:flex;flex-direction:column;gap:4px;}
+.feature-text h3, .algo-text h3{color:var(--gold);font-weight:700;font-size:1.05rem;margin-bottom:2px;}
+.feature-text p, .algo-text p{color:var(--muted);font-size:0.95rem;line-height:1.3;}
 
 /* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:12px;}
-.gallery-item{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;}
-.gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .25s,box-shadow .25s,opacity .5s;opacity:0;transform:translateY(20px);}
-.gallery img.visible{opacity:1;transform:translateY(0);}
-.gallery img:hover{transform:scale(1.05) rotate(-2deg);box-shadow:0 6px 18px rgba(255,200,0,0.4);}
-.overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px;}
+.gallery-item{position:relative;overflow:hidden;border-radius:12px;cursor:pointer;transition:transform 0.3s, box-shadow 0.3s;}
+.gallery-item img{width:100%;height:160px;object-fit:cover;display:block;transition:transform 0.4s;}
+.gallery-item:hover img{transform:scale(1.12);}
+.gallery-item::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(212,175,55,0.15);opacity:0;transition:opacity 0.3s;border-radius:12px;}
+.gallery-item:hover::after{opacity:1;}
+.gallery-item .overlay{position:absolute;bottom:6px;left:6px;color:#fff;font-weight:700;opacity:0;transition:opacity 0.3s;}
 .gallery-item:hover .overlay{opacity:1;}
 
-/* Testimonials + Comments */
-.testimonials,.comments{display:flex;flex-direction:column;gap:12px;margin-top:12px;}
-.testimonial,.comment{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px;text-align:right;color:var(--muted);font-size:14px;border:1px solid rgba(255,200,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
-.comment-author{font-weight:700;color:var(--gold);margin-bottom:4px;}
-.comment-input{margin-top:12px;display:flex;gap:6px;}
-.comment-input input{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(0,0,0,0.4);color:#fff;}
-.comment-input button{padding:8px 12px;border-radius:8px;background:var(--gold);color:#000;font-weight:700;border:none;cursor:pointer;transition:transform .2s;}
-.comment-input button:hover{transform:scale(1.05);}
+/* Testimonials */
+.testimonials{display:grid;gap:12px;margin-top:12px;}
+.testimonial{background:var(--panel);padding:12px 14px;border-radius:12px;border:1px solid rgba(212,175,55,0.08);color:var(--muted);font-size:0.95rem;}
+
+/* Comments Section */
+.comments{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.comment{background:var(--panel);padding:10px 12px;border-radius:12px;border:1px solid rgba(212,175,55,0.08);}
+.comment-author{font-weight:700;color:var(--gold);}
+.comment-input{display:flex;gap:6px;margin-top:10px;}
+.comment-input input{flex:1;padding:8px 12px;border-radius:10px;border:none;background:var(--panel);color:#fff;}
+.comment-input button{padding:8px 12px;border-radius:10px;border:none;background:var(--gold);color:#000;font-weight:700;cursor:pointer;}
 
 /* Footer */
 footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weight:700;}
@@ -162,24 +179,31 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
   .video-frame{min-height:260px;}
   .hero-title{font-size:2rem;}
   .hero-sub{font-size:1rem;}
+  .feature-item, .algo-item{flex-direction:column;align-items:flex-start;}
+  .feature-item svg, .algo-item svg{margin-top:0;}
 }
 </style>
 </head>
 <body>
+
 <div class="wrap">
   <header>
     <div class="hero-title">Secret du succès: "Toujours protéger votre capital avant de chercher le profit."</div>
     <div class="hero-sub">Formation & accompagnement GRATUITS — preuves réelles, vidéos pédagogiques et groupe d'entraide.</div>
-    <div class="hero-cta">
-      <a class="icon-btn" href="https://www.instagram.com/mohammedaliloui" target="_blank">
+    <div class="hero-cta" style="text-align:center;margin-top:16px;">
+      <a class="icon-btn instagram" href="https://www.instagram.com/mohammedaliloui" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7,2H17A5,5 0 0,1 22,7V17A5,5 0 0,1 17,22H7A5,5 0 0,1 2,17V7A5,5 0 0,1 7,2M12,7.5A4.5,4.5 0 1,0 16.5,12A4.5,4.5 0 0,0 12,7.5Z"/></svg> Instagram
       </a>
-      <a class="icon-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9,12L15,12L12,17L9,12M21,3C21,1.89 20.11,1 19,1H5C3.89,1 3,1.89 3,3V21C3,22.11 3.89,23 5,23H19C20.11,23 21,22.11 21,21V3Z"/></svg> Telegram
+      <a class="icon-btn telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21,3C21,1.89 20.11,1 19,1H5C3.89,1 3,1.89 3,3V21C3,22.11 3.89,23 5,23H19C20.11,23 21,22.11 21,21V3Z"/></svg> Telegram
+      </a>
+      <a class="icon-btn whatsapp" href="#" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5,13.5c-0.2,0.1-1.2,0.6-1.4,0.6s-0.3-0.1-0.5-0.3c-0.2-0.2-0.8-1-1-1.2s-0.3-0.2-0.5-0.2-0.3,0-0.5,0.1c-0.2,0.1-0.5,0.2-0.7,0.2s-0.4-0.1-0.6-0.3c-0.2-0.2-0.8-0.9-0.8-1.5s0.1-0.8,0.3-1c0.2-0.2,0.5-0.2,0.7-0.3s0.4-0.1,0.6-0.1c0.2,0,0.5,0,0.7,0s0.5-0.1,0.8-0.1c0.3,0,0.5,0,0.7,0s0.3,0.1,0.5,0.2c0.2,0.1,0.8,0.7,0.9,0.9s0.2,0.5,0.3,0.7s0.1,0.4,0.1,0.6s-0.1,0.3-0.2,0.4S16.7,13.4,16.5,13.5Z"/></svg> WhatsApp
       </a>
     </div>
   </header>
 
+  <!-- Hero & Video -->
   <section class="hero-area fade-up">
     <div class="video-frame">
       <div class="video-thumbnail"><button class="play-btn">▶</button></div>
@@ -196,8 +220,9 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
         </div>
         <div class="desc">Trader professionnel du Maroc — Plus de 5 ans d’expérience sur les marchés de l’or, actions et crypto-monnaies.</div>
         <div class="actions">
-          <a class="icon-btn" href="https://www.instagram.com/mohammedaliloui" target="_blank">Instagram</a>
-          <a class="icon-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">Telegram</a>
+          <a class="icon-btn instagram" href="https://www.instagram.com/mohammedaliloui" target="_blank">Instagram</a>
+          <a class="icon-btn telegram" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank">Telegram</a>
+          <a class="icon-btn whatsapp" href="#" target="_blank">WhatsApp</a>
         </div>
         <a class="vip-btn" href="https://t.me/+xRF1J2vnqigzNDg0" target="_blank" title="Rejoignez le groupe VIP maintenant!">
           🔥 Rejoignez le VIP
@@ -205,6 +230,39 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
         </a>
       </div>
     </aside>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features fade-up">
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      <div class="feature-text">
+        <h3>Spécialiste du marché de l'or — Trader & Coach</h3>
+        <p>5+ ans d'expérience sur l'or, actions et crypto. Formation pratique, méthode claire et preuves vérifiables.</p>
+        <p>✅ Formation gratuite &nbsp; 📊 Preuves réelles &nbsp; 🤖 ALGO & Stratégies</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7h20L12 2zm0 5l7.53 4.26-1.18 6.92L12 14l-6.35 3.18-1.18-6.92L12 7z"/></svg>
+      <div class="feature-text">
+        <h3>Pourquoi rejoindre ?</h3>
+        <p>Contenu complet : vidéos étape-par-étape, captures de résultats, support en direct dans le groupe. Tout est gratuit.</p>
+        <p>Important : Le groupe et la formation sont 100% GRATUITS. Seul le capital de trading est requis — tout le reste offert.</p>
+      </div>
+    </div>
+
+    <div class="algo-section">
+      <div class="algo-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V6h2z"/></svg>
+        <div class="algo-text">
+          <h3>ALGO — Système Automatisé de Trading</h3>
+          <p>ALGO analyse le marché de l'or et exécute les signaux avec gestion stricte du risque.</p>
+          <p>Analyse multi-timeframe, filtres de tendance, règles de position sizing. L'ALGO automatise une méthode éprouvée.</p>
+          <p>📈 Backtests publiables &nbsp; 🔁 Exécution automatique &nbsp; 🔒 Contrôle strict du risque</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Gallery -->
@@ -251,9 +309,10 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
   const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view');});},{threshold:0.12});
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 })();
+
 const galleryImages = document.querySelectorAll('.gallery img');
 galleryImages.forEach(img=>{img.onload=()=>img.classList.add('visible');});
-// Typing effect for Hero Title
+
 const heroTitle = document.querySelector('.hero-title');
 let text = heroTitle.textContent;
 heroTitle.textContent = '';

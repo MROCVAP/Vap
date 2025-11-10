@@ -7,13 +7,7 @@
 <meta name="description" content="Formation & accompagnement gratuits sur le marché de l'or.">
 <meta name="keywords" content="Trader, Or, Investissement, Formation, VIP, Maroc">
 <meta name="author" content="Mohammed Aliloui">
-<meta property="og:title" content="Mohammed Aliloui — Spécialiste du marché de l'or">
-<meta property="og:description" content="Formation & accompagnement gratuits sur le marché de l'or.">
-<meta property="og:image" content="https://i.postimg.cc/7ZQ127Dx/IMG-5223.jpg">
-<meta property="og:url" content="https://fmm7md.com/">
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 :root{
   --bg:#050406;
@@ -172,7 +166,6 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
 </style>
 </head>
 <body>
-
 <div class="wrap">
   <header>
     <div class="hero-title">Secret du succès: "Toujours protéger votre capital avant de chercher le profit."</div>
@@ -250,45 +243,16 @@ footer{margin-top:40px;text-align:center;color:rgba(255,255,255,0.35);font-weigh
     </div>
   </section>
 
-  <!-- Investment Growth Calculator -->
-  <section class="section fade-up">
-    <h2 style="color:var(--gold);font-weight:800;margin-bottom:12px;text-align:center;">حاسب نمو حسابك</h2>
-
-    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:24px;">
-      <label style="font-weight:700;color:#fff;">رأس المال المبدئي ($):</label>
-      <input type="number" id="initialCapital" value="100" min="50" max="10000" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-      <label style="font-weight:700;color:#fff;">نسبة المخاطرة لكل صفقة (%):</label>
-      <input type="number" id="riskPercent" value="2" min="0.1" max="10" step="0.1" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-      <label style="font-weight:700;color:#fff;">متوسط الربح لكل صفقة (%):</label>
-      <input type="number" id="avgReturn" value="5" min="-50" max="50" step="0.1" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-      <label style="font-weight:700;color:#fff;">عدد الصفقات الشهرية:</label>
-      <input type="number" id="tradesPerMonth" value="8" min="1" max="50" style="padding:8px;border-radius:8px;border:none;width:120px;text-align:center;">
-
-      <button id="calculateBtn" class="vip-btn" style="margin-top:12px;">حساب النمو 🔥</button>
-    </div>
-
-    <div id="resultChart" style="width:100%;max-width:600px;margin:0 auto;">
-      <canvas id="growthChart" style="background:#111;border-radius:12px;padding:12px;"></canvas>
-    </div>
-  </section>
-
   <footer>© 2025 — Mohammed Aliloui | Tous droits réservés</footer>
 </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 (function(){
   const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view');});},{threshold:0.12});
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 })();
-
 const galleryImages = document.querySelectorAll('.gallery img');
 galleryImages.forEach(img=>{img.onload=()=>img.classList.add('visible');});
-
 // Typing effect for Hero Title
 const heroTitle = document.querySelector('.hero-title');
 let text = heroTitle.textContent;
@@ -296,51 +260,6 @@ heroTitle.textContent = '';
 let i = 0;
 function typingEffect(){if(i<text.length){heroTitle.textContent+=text[i];i++;setTimeout(typingEffect,20);}}
 typingEffect();
-
-// Investment Growth Calculator
-document.getElementById('calculateBtn').addEventListener('click', function(){
-  const capital = parseFloat(document.getElementById('initialCapital').value);
-  const risk = parseFloat(document.getElementById('riskPercent').value)/100;
-  const avgReturn = parseFloat(document.getElementById('avgReturn').value)/100;
-  const trades = parseInt(document.getElementById('tradesPerMonth').value);
-
-  let balance = capital;
-  const balances = [balance.toFixed(2)];
-  const labels = ['البدء'];
-
-  for(let month=1; month<=12; month++){
-    const monthlyChange = balance * risk * avgReturn * trades;
-    balance += monthlyChange;
-    balances.push(balance.toFixed(2));
-    labels.push(`شهر ${month}`);
-  }
-
-  const ctx = document.getElementById('growthChart').getContext('2d');
-  if(window.growthChart) window.growthChart.destroy();
-  window.growthChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'رأس المال المتوقع ($)',
-        data: balances,
-        borderColor: 'rgba(212,175,55,0.9)',
-        backgroundColor: 'rgba(212,175,55,0.3)',
-        tension:0.3,
-        fill:true,
-        pointRadius:5
-      }]
-    },
-    options: {
-      responsive:true,
-      plugins:{legend:{display:true,labels:{color:'#fff'}}},
-      scales:{
-        x:{ticks:{color:'#fff'}},
-        y:{ticks:{color:'#fff'}}
-      }
-    }
-  });
-});
 </script>
 
 </body>
